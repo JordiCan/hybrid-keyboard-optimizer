@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       CLASE DE DOCUMENTO Y PAQUETES                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,spanish]{report}
+
+
+\usepackage[utf8]{inputenc} 
+
+
+\usepackage{graphicx} 
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath} 
+\usepackage{booktabs} 
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc, backgrounds, fit, shapes.geometric, matrix, chains}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\usepackage{natbib}            
+\usepackage{pdfpages}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 INFORMACIÓN PARA LA PORTADA Y EL DOCUMENTO                  %
+%          (Rellena o modifica los campos según sea necesario)                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\theuniversity}{Universitat Politècnica de València}
+\newcommand{\theschool}{DSIC - Departament de Sistemes Informàtics i Computació}
+\newcommand{\thedegree}{MIARFID - Màster en Intel·ligència Artificial y Reconocimiento de Formas}
+\newcommand{\theprojecttype}{Trabajo académico}
+
+\newcommand{\thetitle}{Optimización de Distribución de Teclados para el Inglés}
+\newcommand{\theauthor}{Jordi Cantavella Ferrero}
+\newcommand{\thecourse}{Curs Acadèmic 2025-2026}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                              INICIO DEL DOCUMENTO                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[colorlinks=true, linkcolor=purple, citecolor=green!60!black, urlcolor=magenta]{hyperref}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    
+   
+    \vspace{1.5cm}
+    
+    {\Large \bfseries \theuniversity} \\
+    \vspace{0.5cm}
+    {\large \theschool} \\
+    
+    \vspace{2cm}
+    
+    {\large \textbf{\theprojecttype}} \\
+    \vspace{0.2cm}
+    {\large \thedegree} \\
+    
+    \vfill 
+    
+    {\Huge \bfseries \thetitle} \\
+    
+    \vfill
+    
+    \begin{minipage}{0.8\textwidth}
+        \begin{flushleft}
+            \large
+            \textbf{Autor:} \\
+            \theauthor \\
+            \vspace{1cm}
+        \end{flushleft}
+    \end{minipage}
+    
+    \vfill
+    
+    {\large \thecourse}
+    
+\end{titlepage}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    ESTRUCTURA PRINCIPAL DEL CONTENIDO                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introducción} \label{chpt:1}
+\section{Contexto}
+La distribución de los teclados actuales no estan optimizadas para la ergonomia y la eficiencia a la hora de escribir. 
+Las distribuciones actuales tienen sus raices en la mecanografía tradicional y no han evolucionado para adaptarse a las necesidades modernas de los usuarios.
+Distribuciones como QWERTY, surgida en 1873, diseñadas para maquinas de escribir mecánicas hoy en día no son las más eficientes para la escritura en dispositivos digitales.
+
+
+Estudios posteriores demostraron que la disposición del teclado QWERTY generaba movimientos ineficientes, contribuyendo a la fatiga y al riesgo de lesiones.
+Dando lugar a posteriores distribuciones como Dvorak (1936) y Colemak (2006) que buscaban mejorar la eficiencia y reducir la fatiga del usuario.
+Buscando maximizar la velocidad de escritura y minimizar el esfuerzo físico, estas distribuciones se basan en principios ergonómicos y análisis lingüísticos.
+
+\section{Objetivos}
+El objetivo principal de este trabajo es la optimización de la distribución del teclado, buscando generar disposiciones de teclado ergonómicas y eficientes.
+Implementado para ello un algoritmo genético y enfriamiento simulado que permita explorar el espacio de posibles distribuciones y encontrar configuraciones óptimas 
+basadas en criterios ergonómicos y lingüísticos.
+\begin{itemize}
+    \item Implementar un algoritmo genético que permita la generación y evaluación de diferentes distribuciones de teclado.
+    \item Implementar un algoritmo de enfriamiento simulado para el mismo problema.
+    \item Definir métricas de evaluación que consideren distancia, alternancia de manos y esfuerzo de dedos
+    \item Análisis de los resultados obtenidos por los algoritmos.
+    \item Comparar las distribuciones generadas con las existentes como \textit{QWERTY}, \textit{Dvorak} y \textit{Colemak}.
+\end{itemize}
+
+\section{Alcance y limitaciones}
+Dadas las limitaciones temporales y de recursos, este trabajo se centrará en la optimización de distribuciones de teclado para el idioma español.
+No se abordarán aspectos relacionados con la implementación física de los teclados ni la adaptación a diferentes dispositivos.
+
+\chapter{Marco teórico} \label{chpt:2}
+\section{Historia de las dispociones de teclado} \label{sec:historia_teclados}
+Al largo del tiempo se han utilizado diferentes tipos de teclados, desde los primeros teclados mecánicos hasta los modernos teclados digitales.
+Entre ellos se han destacado los teclados QWERTY, Dvorak y Colemak.
+
+El teclado \textbf{QWERTY}, diseñado en 1873 por Christopher Latham Sholes, fue creado para evitar el atasco de las teclas en las primeras máquinas de escribir mecánicas.
+Su diseño priorizaba la separación de las letras más utilizadas en inglés para reducir la velocidad de escritura y evitar que las barras de las teclas se atascaran.
+
+El teclado \textbf{Dvorak}, desarrollado en 1936 por August Dvorak y su cuñado William Dealey, se diseñó para mejorar la eficiencia y reducir la fatiga del usuario.
+Demostro una reducción de hasta un 35\% de movimiento comparandola con la distribución QWERTY, colocando las letras más utilizadas en la fila central y promoviendo la alternancia de manos.
+
+El teclado \textbf{Colemak}, introducido en 2006 por Shai Coleman, es una evolución del teclado QWERTY que busca mejorar la eficiencia sin requerir un cambio radical en la disposición de las teclas.
+Colemak mantiene muchas de las teclas en sus posiciones originales, facilitando la transición para los usuarios acostumbrados a QWERTY.
+Se enfoca en minimizar el movimiento de los dedos y maximizar la velocidad de escritura, colocando las letras más comunes en posiciones accesibles.
+
+Como muestra la Figura \ref{fig:keyboard_layouts}, cada una de estas distribuciones tiene un enfoque diferente en cuanto a la ergonomía y la eficiencia, reflejando las necesidades y tecnologías de su época.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/qwerty-dvorak-colemak.jpg}
+    \caption{Comparación de las distribuciones de teclado QWERTY, Dvorak y Colemak.}
+    \label{fig:keyboard_layouts}
+
+\end{figure}
+
+Representando las diferentes distribuciones de teclado, la Figura \ref{fig:keyboard_layouts} ilustra cómo cada una de estas disposiciones busca optimizar la experiencia de escritura desde diferentes perspectivas.
+Observando la concentración de las letras más utilizadas en la fila central del teclado Dvorak y Colemak, en contraste con la disposición más dispersa del teclado QWERTY.
+
+\section{Ergonomia del teclado} \label{sec:ergonomia_teclado}
+Siguiendo con las principales distribuciones introducidas en la sección \ref{sec:historia_teclados}, la ergonomía del teclado es un aspecto crucial en el diseño de las disposiciones de teclado.
+La mano presenta una serie de carácterísticas anatómicas que influyen en la comodidad y eficiencia al escribir. Entre ella destacamos:
+\begin{itemize}
+    \item \textbf{Fuerza de los dedos:} La fuerza de los dedos varía, siendo el pulgar y el dedo medio los más fuertes, mientras que el meñique es el más débil.
+    \item \textbf{Movilidads de los dedos:} Los dedos tienen diferentes rangos de movimiento, con el pulgar y el dedo índice siendo los más móviles.
+    \item \textbf{Fatiga muscular:} El uso prolongado de ciertos dedos puede llevar a la fatiga muscular, especialmente si se requiere un esfuerzo constante.
+    \item \textbf{Postura de la mano:} Una postura natural y relajada de la mano es esencial para evitar tensiones y lesiones a largo plazo.
+\end{itemize}
+
+\section{Analisis linguistico} \label{sec:analisis_linguistico}
+El análisis lingüístico es fundamental para diseñar distribuciones de teclado que optimicen la eficiencia de la escritura.
+Prestando atención a la frecuencia de las letras y su distribución nos permitira diseñar teclados que minimicen el movimiento de los dedos y maximicen la velocidad de escritura.
+
+En la Figura \ref{fig:english_letter_frequency} se muestra un análisis de la frecuencia de las letras en ingles.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/english.png}
+    \caption{Frecuencia de las letras en ingles.}
+    \label{fig:english_letter_frequency}
+\end{figure}
+
+La Figura \ref{fig:letter_frequency_languages} muestra la frecuencia de distribución de las 26 letras más comunes utilizadas en el latín.
+Siendo todas las lenguas que utilizan el alfabeto latino, como el español, inglés, francés, alemán e italiano.
+Observando que la frecuencia de las letras varía entre los diferentes idiomas, lo que influye en el diseño óptimo de las distribuciones de teclado para cada lengua, 
+aún siendo estas lenguas con un alfabeto similar y origen común.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/idiomas.png}
+    \caption{Frecuencia de las letras en diferentes idiomas.}
+    \label{fig:letter_frequency_languages}
+\end{figure}
+
+Observado queda en la Figura \ref{fig:letter_frequency_languages} que la frecuencia entre diferentes idiomas varia.
+También a destacar que nuestro corpus de referencia, ha de capturar un conjunto diverso del uso de la lengua, incluyendo textos formales e informales, para obtener una representación precisa de la frecuencia 
+de las letras y combinaciones de letras.
+
+
+
+%\section{Speaker diarization} \label{sec:speaker_diarization}
+
+\chapter{Metodologia Algoritmo Genético} \label{chpt:3}
+\section{Modelado del problema} \label{sec:modelado_problema}
+\section{Función de evaluación} \label{sec:funcion_evaluacion}
+\section{Representación} \label{sec:representacion}
+\section{Diseño del Algoritmo Genético} \label{sec:diseno_algoritmo_genetico}
+
+\chapter{Multiple speaker experiments in English} \label{chpt:4}
+\section{Introduction} \label{Experimental Introduction} 
+\section{Pipeline construction} \label{Pipeline construction}
+\section{Experimental results} \label{sec:Experimental results English}
+\section{Conclusion} \label{sec:Conclusion English}
+
+\chapter{Multiple speaker experiments in Catalan} \label{chpt:5}
+\section{Introduction} \label{sec:introduction_catalan}
+\section{Programs} \label{sec:programs_catalan}
+\section{Experimental setup} \label{sec:experimental_setup_catalan}
+\section{Experiments results} \label{sec:experiments_results_catalan}
+\section{Conclusion} \label{sec:conclusion_catalan}
+
+\chapter{Conclusions} \label{chpt:6}
+\section{Summary of the developed work}
+\section{Achieved objectives}
+\section{Future work}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                BIBLIOGRAFÍA                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+% \bibliographystyle{plain}
+% \bibliography{referencias} % Descomenta si tienes un archivo .bib
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 APÉNDICES                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\chapter{Sustainable Development Goals (ODS)}
+% Contenido del apéndice aquí
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                              FIN DEL DOCUMENTO                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
