@@ -1,6 +1,21 @@
 import numpy as np
 import random
 from random import randint, shuffle
+import matplotlib.pyplot as plt
+
+
+def load_text_from_file(filename):
+    """Load text from file, handle encoding issues"""
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            return file.read().lower()
+    except FileNotFoundError:
+        print(f"File {filename} not found. Using default text.")
+        return None
+
+    except Exception as e:
+        print(f"Error reading file: {e}. Using default text.")
+        return None
 
 def init_population(pop_size, known_distributions=False):
     """
@@ -127,15 +142,6 @@ def finger_penalty(pos1, pos2):
         if strength1 <= 2 or strength2 <= 2:  
             penalty += 0.5
     
-    # # === HORIZONTAL MOVEMENT PENALTIES ===
-    # col_diff = abs(col1 - col2)
-    # if col_diff >= 3:  
-    #     penalty += 0.3
-    #     if (hand1 != hand2 and 
-    #         ((col1 in [0, 1] and col2 in [8, 9]) or 
-    #          (col1 in [8, 9] and col2 in [0, 1]))):
-    #         penalty += 0.4
-    
     # === FINGER STRENGTH PENALTIES ===
     if finger1 == 0 or finger2 == 0:
         penalty += 0.15
@@ -207,6 +213,235 @@ def fitness_function(population, text):
     return results
 
 
+def selection(population, text, selection_method="elitist"):
+    """
+    Select and rank population based on fitness
+    
+    Args:
+        population: List of keyboard layouts
+        text: Text to evaluate fitness on
+        selection_method: "elitist" (rank by fitness) or "tournament" 
+    
+    Returns:
+        tuple: (selected_population, fitness_scores) - both sorted by fitness (best first)
+    """
+    fitness_scores = fitness_function(population, text)
+    
+    if selection_method == "elitist":
+        sorted_indices = np.argsort(fitness_scores)
+        selected_population = [population[i] for i in sorted_indices]
+        sorted_fitness = [fitness_scores[i] for i in sorted_indices]
+        
+        return selected_population, sorted_fitness
+    
+    elif selection_method == "tournament":
+        selected_population = []
+        selected_fitness = []
+        
+        for _ in range(len(population)):
+            tournament_indices = np.random.choice(len(population), 3, replace=False)
+            tournament_fitness = [fitness_scores[i] for i in tournament_indices]
+            
+            winner_idx = tournament_indices[np.argmin(tournament_fitness)]
+            selected_population.append(population[winner_idx])
+            selected_fitness.append(fitness_scores[winner_idx])
+        
+        return selected_population, selected_fitness
+    
+    else:
+        raise ValueError(f"Unknown selection method: {selection_method}")
+
+
+def crossover(parent1, parent2):
+    """
+
+    Generate the offspring from two parents, based on the cross of two different segments.    
+    Args:
+        parent1, parent2: Parent keyboard layouts (permutations)
+    
+    Returns:
+        list: Child keyboard layout (valid permutation)
+    """
+    size = len(parent1)
+    child = [None] * size
+    
+    start = np.random.randint(0, size)
+    end = np.random.randint(start + 1, size + 1)
+    
+    child[start:end] = parent1[start:end]
+    
+    mapping = {}
+    for i in range(start, end):
+        mapping[parent1[i]] = parent2[i]
+    
+    for i in range(size):
+        if child[i] is None:
+            candidate = parent2[i]
+            while candidate in child[start:end]:
+                candidate = mapping[candidate]
+            child[i] = candidate
+    
+    return child
+
+def fix_duplicates(child, parent1, parent2):
+    """
+    Fix duplicate characters in child by replacing with missing ones
+    """
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ',', '.', ';', "'"]
+    
+    seen = set()
+    duplicates = []
+    
+    for i, char in enumerate(child):
+        if char in seen:
+            duplicates.append(i)
+        else:
+            seen.add(char)
+    
+    missing = [char for char in letters if char not in seen]
+    
+    for i, missing_char in zip(duplicates, missing):
+        child[i] = missing_char
+    
+    return child
+
+def mutation(population, mutation_rate=0.1):
+    """
+    Apply swap mutation to population
+    
+    Args:
+        population: List of keyboard layouts
+        mutation_rate: Probability of mutation for each individual
+    
+    Returns:
+        list: Mutated population
+    """
+    mutated_population = []
+    
+    for layout in population:
+        new_layout = layout.copy()
+        if np.random.rand() < mutation_rate:
+            pos1, pos2 = np.random.choice(30, 2, replace=False)
+            new_layout[pos1], new_layout[pos2] = new_layout[pos2], new_layout[pos1]
+        
+        mutated_population.append(new_layout)
+    
+    return mutated_population
+
+def replacement(old_population, new_offspring):
+    """
+    Replace old population with new offspring
+    
+    Args:
+        old_population: Current population (sorted by fitness, best first)
+        new_offspring: New offspring from crossover and mutation
+        replacement_method: "generational" (replace all) or "elitist" (keep best)
+    
+    Returns:
+        list: New population
+    """
+
+    
+    elite_size = len(old_population) // 2
+    elite = old_population[:elite_size]  
+    new_population = elite + new_offspring[:len(old_population) - elite_size]
+    return new_population
+    
+
+def tournament_selection(population_with_fitness, tournament_size=3):
+    """
+    Perform tournament selection to select one parent
+    
+    Args:
+        population_with_fitness: List of (layout, fitness) tuples
+        tournament_size: Number of individuals in each tournament
+    
+    Returns:
+        Selected parent layout
+    """
+    tournament = random.sample(population_with_fitness, k=tournament_size)
+    winner = min(tournament, key=lambda item: item[1])  # Winner has lowest fitness
+    return winner[0]  # Return just the layout
+
+
+def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10, tournament_size=3, crossover_rate=0.8, mutation_rate=0.1, use_known_distributions=True):
+    """Run the genetic algorithm to optimize keyboard layouts"""
+    
+    print("--- Starting Genetic Algorithm (with Tournament Selection) ---")
+    text = load_text_from_file(text_file)
+    if text is None:
+        print("Could not load text. Aborting.")
+        return None, None
+        
+    print(f"Loaded {len(text)} characters from '{text_file}'.")
+    
+    population = init_population(pop_size, use_known_distributions)
+    print(f"Initialized population of {pop_size} layouts.")
+
+    history = {"best_fitness": [], "avg_fitness": []}
+    best_layout_ever = None
+    best_fitness_ever = float('inf')
+
+    # Generational Loop
+    for gen in range(generations):
+        # Calculate fitness for current population
+        fitness_scores = fitness_function(population, text)
+        
+        # Create population with fitness pairs for easier handling
+        population_with_fitness = list(zip(population, fitness_scores))
+        population_with_fitness.sort(key=lambda item: item[1])  # Sort by fitness (best first)
+        
+        # Extract sorted population and fitness for reporting
+        sorted_population = [item[0] for item in population_with_fitness]
+        sorted_fitness = [item[1] for item in population_with_fitness]
+        
+        # Track best and average fitness
+        current_best_fitness = sorted_fitness[0]
+        current_avg_fitness = np.mean(sorted_fitness)
+        history["best_fitness"].append(current_best_fitness)
+        history["avg_fitness"].append(current_avg_fitness)
+
+        if current_best_fitness < best_fitness_ever:
+            best_fitness_ever = current_best_fitness
+            best_layout_ever = sorted_population[0].copy()
+
+        print(f"Generation {gen+1:02}/{generations} -> Best Fitness: {current_best_fitness:,.2f}, Avg Fitness: {current_avg_fitness:,.2f}")
+
+        # Create next generation
+        next_generation = []
+
+        # Elitism: Keep the best individuals
+        elite = [layout.copy() for layout in sorted_population[:elite_size]]
+        next_generation.extend(elite)
+        
+        # Create offspring through crossover and mutation
+        num_offspring = pop_size - elite_size
+        
+        for _ in range(num_offspring):
+            # Tournament selection for parents
+            parent1 = tournament_selection(population_with_fitness, tournament_size)
+            parent2 = tournament_selection(population_with_fitness, tournament_size)
+
+            # Crossover
+            if random.random() < crossover_rate:
+                child = crossover(parent1, parent2)
+            else:
+                child = parent1.copy()  # Clone parent if no crossover
+            
+            # Add to offspring (mutation will be applied later)
+            next_generation.append(child)
+
+        # Apply mutation to the entire next generation (including elites)
+        next_generation = mutation(next_generation, mutation_rate)
+        
+        # Update population for next iteration
+        population = next_generation
+
+    print("\n--- Genetic Algorithm Finished ---")
+    return best_layout_ever, history
+        
+
+
 def print_keyboard(layout, name="Keyboard"):
     """Print keyboard in 3x10 format"""
     print(f"\n{name}:")
@@ -214,11 +449,41 @@ def print_keyboard(layout, name="Keyboard"):
         row_keys = layout[row*10:(row+1)*10]
         print(" ".join(f"{key:>2}" for key in row_keys))
     
+def test_genetic_operators():
+    """Test the genetic algorithm components"""
+    population = init_population(10, known_distributions=True)
+    sample_text = "the quick brown fox jumps over the lazy dog"
+    
+    print("=== TESTING GENETIC OPERATORS ===")
+    
+    # Test selection
+    selected, fitness = selection(population, sample_text, "elitist")
+    print("Selection results (fitness scores):")
+    for i, f in enumerate(fitness[:5]):
+        print(f"  Individual {i}: {f:.2f}")
+    
+    # Test crossover
+    child = crossover(selected[0], selected[1])
+    print(f"\nCrossover result (first 10 keys): {child[:10]}")
+    
+    # Verify crossover produces valid permutation
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ',', '.', ';', "'"]
+    if set(child) == set(letters) and len(child) == 30:
+        print("✓ Crossover produces valid permutation")
+    else:
+        print("✗ Crossover error - invalid permutation")
+    
+    # Test mutation
+    mutated = mutation([child], mutation_rate=1.0)
+    print(f"Mutation result (first 10 keys): {mutated[0][:10]}")
+    
+    print("\nGenetic operators working correctly!")
       
 def test_system():
     """Test the optimized system"""
     population = init_population(4, known_distributions=True)
-    sample_text = "the quick brown fox jumps over the lazy dog"
+    sample_text = "the quick brown fox jumps over the lazy dog and then runs away quickly so that it can hide from the hunter in the forest and avoid being caught eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+
     
     fitness_scores = fitness_function(population, sample_text)
     layout_names = ['QWERTY', 'Dvorak', 'QWERTZ', 'Colemak']
@@ -241,6 +506,64 @@ def test_system():
         print("-" * 40+ "\n")
 
 
+def plot_history(history, generations):
+    """
+    Plots the best and average fitness over generations.
+
+    Args:
+        history (dict): Dictionary with 'best_fitness' and 'avg_fitness' lists.
+        generations (int): Total number of generations for the x-axis.
+    """
+    if not history or not history['best_fitness']:
+        print("No history to plot.")
+        return
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(history['best_fitness'], label='Best Fitness', color='blue', linewidth=2)
+    plt.plot(history['avg_fitness'], label='Average Fitness', color='cyan', linestyle='--')
+    plt.title('Keyboard Layout Fitness Evolution Over Generations')
+    plt.xlabel('Generation')
+    plt.ylabel('Fitness Score (Lower is Better)')
+    plt.xticks(np.arange(0, generations, step=max(1, generations//10)))
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+
+
 if __name__ == "__main__":
-    test_system()
-    
+    POPULATION_SIZE = 20
+    GENERATIONS = 30
+    ELITE_SIZE = 10           # Keep the top 10%
+    TOURNAMENT_SIZE = 3      # Standard tournament size
+    CROSSOVER_RATE = 0.8
+    MUTATION_RATE = 0.25
+    TEXT_FILE = 'data/moby_dick_cln.txt'  
+
+    best_layout, evolution_history = run_genetic_algorithm(
+        text_file=TEXT_FILE,
+        pop_size=POPULATION_SIZE,
+        generations=GENERATIONS,
+        elite_size=ELITE_SIZE,
+        tournament_size=TOURNAMENT_SIZE,
+        crossover_rate=CROSSOVER_RATE,
+        mutation_rate=MUTATION_RATE,
+        use_known_distributions=True
+    )
+
+    if best_layout:
+        qwerty = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"]
+        text_content = load_text_from_file(TEXT_FILE)
+        qwerty_fitness = fitness_function([qwerty], text_content)[0]
+
+        print("\n--- Final Results ---")
+        
+        print(f"\nQWERTY Fitness Score: {qwerty_fitness:,.2f}")
+        print_keyboard(qwerty, "QWERTY Layout")
+
+        best_fitness = evolution_history['best_fitness'][-1]
+        print(f"\nBest Evolved Layout Fitness Score: {best_fitness:,.2f}")
+        print_keyboard(best_layout, "Best Evolved Layout")
+
+        #plot_history(evolution_history, GENERATIONS)
