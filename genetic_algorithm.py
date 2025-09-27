@@ -252,36 +252,74 @@ def selection(population, text, selection_method="elitist"):
         raise ValueError(f"Unknown selection method: {selection_method}")
 
 
+# def crossover(parent1, parent2):
+#     """
+
+#     Generate the offspring from two parents, based on the cross of two different segments.    
+#     Args:
+#         parent1, parent2: Parent keyboard layouts (permutations)
+    
+#     Returns:
+#         list: Child keyboard layout (valid permutation)
+#     """
+#     size = len(parent1)
+#     child = [None] * size
+    
+#     start = np.random.randint(0, size)
+#     end = np.random.randint(start + 1, size + 1)
+    
+#     child[start:end] = parent1[start:end]
+    
+#     mapping = {}
+#     for i in range(start, end):
+#         mapping[parent1[i]] = parent2[i]
+    
+#     for i in range(size):
+#         if child[i] is None:
+#             candidate = parent2[i]
+#             while candidate in child[start:end]:
+#                 candidate = mapping[candidate]
+#             child[i] = candidate
+    
+#     return child
+
+
+# REEMPLAZA tu función crossover actual con esta:
 def crossover(parent1, parent2):
     """
-
-    Generate the offspring from two parents, based on the cross of two different segments.    
+    Crossover que genera DOS hijos complementarios
+    
     Args:
         parent1, parent2: Parent keyboard layouts (permutations)
     
     Returns:
-        list: Child keyboard layout (valid permutation)
+        tuple: (child1, child2) - Dos hijos válidos
     """
     size = len(parent1)
-    child = [None] * size
     
-    start = np.random.randint(0, size)
-    end = np.random.randint(start + 1, size + 1)
+    # Seleccionar punto de división (más conservador para mejor herencia)
+    split_point = random.randint(size // 3, 2 * size // 3)  # División entre 33% y 67%
     
-    child[start:end] = parent1[start:end]
+    # === CREAR HIJO 1: Primera mitad P1 + Segunda mitad P2 ===
+    child1 = [None] * size
+    child1[:split_point] = parent1[:split_point]
+    inherited_from_p1 = set(parent1[:split_point])
     
-    mapping = {}
-    for i in range(start, end):
-        mapping[parent1[i]] = parent2[i]
+    # Llenar resto con parent2 en orden
+    p2_filtered = [gene for gene in parent2 if gene not in inherited_from_p1]
+    child1[split_point:split_point+len(p2_filtered)] = p2_filtered
     
-    for i in range(size):
-        if child[i] is None:
-            candidate = parent2[i]
-            while candidate in child[start:end]:
-                candidate = mapping[candidate]
-            child[i] = candidate
+    # === CREAR HIJO 2: Primera mitad P2 + Segunda mitad P1 ===
+    child2 = [None] * size
+    child2[:split_point] = parent2[:split_point]
+    inherited_from_p2 = set(parent2[:split_point])
     
-    return child
+    # Llenar resto con parent1 en orden
+    p1_filtered = [gene for gene in parent1 if gene not in inherited_from_p2]
+    child2[split_point:split_point+len(p1_filtered)] = p1_filtered
+    
+    return child1, child2
+
 
 def fix_duplicates(child, parent1, parent2):
     """
@@ -364,10 +402,86 @@ def tournament_selection(population_with_fitness, tournament_size=3):
     return winner[0]  # Return just the layout
 
 
-def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10, tournament_size=3, crossover_rate=0.8, mutation_rate=0.1, use_known_distributions=True):
-    """Run the genetic algorithm to optimize keyboard layouts"""
+# def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10, tournament_size=3, crossover_rate=0.8, mutation_rate=0.1, use_known_distributions=True):
+#     """Run the genetic algorithm to optimize keyboard layouts"""
     
-    print("--- Starting Genetic Algorithm (with Tournament Selection) ---")
+#     print("--- Starting Genetic Algorithm (with Tournament Selection) ---")
+#     text = load_text_from_file(text_file)
+#     if text is None:
+#         print("Could not load text. Aborting.")
+#         return None, None
+        
+#     print(f"Loaded {len(text)} characters from '{text_file}'.")
+    
+#     population = init_population(pop_size, use_known_distributions)
+#     print(f"Initialized population of {pop_size} layouts.")
+
+#     history = {"best_fitness": [], "avg_fitness": []}
+#     best_layout_ever = None
+#     best_fitness_ever = float('inf')
+
+#     # Generational Loop
+#     for gen in range(generations):
+#         # Calculate fitness for current population
+#         fitness_scores = fitness_function(population, text)
+        
+#         # Create population with fitness pairs for easier handling
+#         population_with_fitness = list(zip(population, fitness_scores))
+#         population_with_fitness.sort(key=lambda item: item[1])  # Sort by fitness (best first)
+        
+#         # Extract sorted population and fitness for reporting
+#         sorted_population = [item[0] for item in population_with_fitness]
+#         sorted_fitness = [item[1] for item in population_with_fitness]
+        
+#         # Track best and average fitness
+#         current_best_fitness = sorted_fitness[0]
+#         current_avg_fitness = np.mean(sorted_fitness)
+#         history["best_fitness"].append(current_best_fitness)
+#         history["avg_fitness"].append(current_avg_fitness)
+
+#         if current_best_fitness < best_fitness_ever:
+#             best_fitness_ever = current_best_fitness
+#             best_layout_ever = sorted_population[0].copy()
+
+#         print(f"Generation {gen+1:02}/{generations} -> Best Fitness: {current_best_fitness:,.2f}, Avg Fitness: {current_avg_fitness:,.2f}")
+
+#         # Create next generation
+#         next_generation = []
+
+#         elite = [layout.copy() for layout in sorted_population[:elite_size]]
+#         next_generation.extend(elite)
+        
+#         num_offspring = pop_size - elite_size
+        
+#         for _ in range(num_offspring):
+#             parent1 = tournament_selection(population_with_fitness, tournament_size)
+#             parent2 = tournament_selection(population_with_fitness, tournament_size)
+
+#             # Crossover
+#             if random.random() < crossover_rate:
+#                 child = crossover(parent1, parent2)
+#             else:
+#                 child = parent1.copy()  
+            
+#             next_generation.append(child)
+
+#         next_generation = mutation(next_generation, mutation_rate)
+        
+#         # Update population for next iteration
+#         population = next_generation
+
+#     print("\n--- Genetic Algorithm Finished ---")
+#     return best_layout_ever, history
+
+def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10, 
+                                 tournament_size=3, crossover_rate=0.8, mutation_rate=0.1, 
+                                 use_known_distributions=True):
+    """
+    Versión actualizada del algoritmo genético con crossover de 2 hijos
+    """
+    print("--- Starting Genetic Algorithm (with Two-Child Crossover) ---")
+    
+    # ... código de inicialización igual ...
     text = load_text_from_file(text_file)
     if text is None:
         print("Could not load text. Aborting.")
@@ -410,26 +524,42 @@ def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10
         # Create next generation
         next_generation = []
 
-        # Elitism: Keep the best individuals
         elite = [layout.copy() for layout in sorted_population[:elite_size]]
         next_generation.extend(elite)
         
-        # Create offspring through crossover and mutation
-        num_offspring = pop_size - elite_size
+        num_offspring_needed = pop_size - elite_size
+        num_pairs = num_offspring_needed // 2  
         
-        for _ in range(num_offspring):
-            # Tournament selection for parents
+        offspring = []
+        
+        for _ in range(num_pairs):
             parent1 = tournament_selection(population_with_fitness, tournament_size)
             parent2 = tournament_selection(population_with_fitness, tournament_size)
 
-            # Crossover
             if random.random() < crossover_rate:
-                child = crossover(parent1, parent2)
+                child1, child2 = crossover(parent1, parent2)  
             else:
-                child = parent1.copy()  # Clone parent if no crossover
+                child1, child2 = parent1.copy(), parent2.copy()  
             
-            # Add to offspring (mutation will be applied later)
-            next_generation.append(child)
+            # Añadir ambos hijos
+            offspring.extend([child1, child2])
+        
+        # Si necesitamos un hijo impar adicional
+        if len(offspring) < num_offspring_needed:
+            parent1 = tournament_selection(population_with_fitness, tournament_size)
+            parent2 = tournament_selection(population_with_fitness, tournament_size)
+            
+            if random.random() < crossover_rate:
+                child1, _ = crossover(parent1, parent2)  # Solo usar el primer hijo
+            else:
+                child1 = parent1.copy()
+            
+            offspring.append(child1)
+        
+        # Combinar elite + offspring (tomar solo los necesarios)
+        next_generation.extend(offspring[:num_offspring_needed])
+        
+        # ===== FIN SECCIÓN ACTUALIZADA =====
 
         # Apply mutation to the entire next generation (including elites)
         next_generation = mutation(next_generation, mutation_rate)
@@ -438,8 +568,7 @@ def run_genetic_algorithm(text_file, pop_size=100, generations=50, elite_size=10
         population = next_generation
 
     print("\n--- Genetic Algorithm Finished ---")
-    return best_layout_ever, history
-        
+    return best_layout_ever, history 
 
 
 def print_keyboard(layout, name="Keyboard"):
