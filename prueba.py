@@ -342,19 +342,6 @@ def print_keyboard(layout, name="Keyboard"):
         row_keys = layout[row*10:(row+1)*10]
         print("  " + " ".join(f"{key:>2}" for key in row_keys))
 
-def print_latex_data(history, generations):
-    """Print best fitness data in LaTeX format"""
-    print("\n" + "="*60)
-    print("DATOS PARA LATEX - Copia directamente")
-    print("="*60)
-    print("\n% Generación y Best Fitness")
-    print("% coordinates {(gen, fitness)}")
-    print()
-    
-    for gen in range(1, generations + 1):
-        print(f"({gen}, {history['best_fitness'][gen-1]:.1f})")
-    
-    print("\n" + "="*60)
 
 # ============ MAIN ============
 if __name__ == "__main__":
@@ -422,10 +409,7 @@ if __name__ == "__main__":
 
         best_fitness = evolution_history['best_fitness'][-1]
         
-        improvement_qwerty = ((qwerty_fitness - best_fitness) / qwerty_fitness) * 100
-        improvement_qwertz = ((qwertz_fitness - best_fitness) / qwertz_fitness) * 100
-        improvement_dvorak = ((dvorak_fitness - best_fitness) / dvorak_fitness) * 100
-        improvement_colemak = ((colemak_fitness - best_fitness) / colemak_fitness) * 100
+        improvement = ((qwerty_fitness - best_fitness) / qwerty_fitness) * 100
         
         print(f"\nQWERTY Fitness: {qwerty_fitness:,.1f}")
         print_keyboard(qwerty, "QWERTY")
@@ -437,11 +421,6 @@ if __name__ == "__main__":
         print_keyboard(colemak, "Colemak")
         
         print(f"\n\nBest Evolved Fitness: {best_fitness:,.1f}")
-        print(f"Improvement: {improvement_qwerty:.1f}% better than QWERTY")
-        print(f"Improvement: {improvement_qwertz:.1f}% better than QWERTZ")
-        print(f"Improvement: {improvement_dvorak:.1f}% better than dvorak")
-        print(f"Improvement: {improvement_colemak:.1f}% better than colemak")
-        
-        print_latex_data(evolution_history, GENERATIONS)
+        print(f"Improvement: {improvement:.1f}% better than QWERTY")
         print_keyboard(best_layout, "OPTIMIZED LAYOUT")
         
