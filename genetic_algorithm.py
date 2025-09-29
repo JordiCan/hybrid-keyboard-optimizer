@@ -365,6 +365,7 @@ if __name__ == "__main__":
     CROSSOVER_RATE = 0.85       # Alto cruce para exploración
     MUTATION_RATE = 0.15        # Mutación moderada (evita destruir buenos genes)
     SEED=123
+    latex_format=True
     TEXT_FILE = 'hybrid-keyboard-optimizer/data/moby_dick_cln.txt'
     
     best_layout, evolution_history = run_genetic_algorithm(
@@ -441,7 +442,8 @@ if __name__ == "__main__":
         print(f"Improvement: {improvement_qwertz:.1f}% better than QWERTZ")
         print(f"Improvement: {improvement_dvorak:.1f}% better than dvorak")
         print(f"Improvement: {improvement_colemak:.1f}% better than colemak")
-        
-        print_latex_data(evolution_history, GENERATIONS)
+
+        if latex_format:
+            print_latex_data(evolution_history, GENERATIONS)
         print_keyboard(best_layout, "OPTIMIZED LAYOUT")
         
