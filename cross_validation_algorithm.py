@@ -311,15 +311,17 @@ def print_latex_data(history, generations):
     return lines
 
 def save_results(output_lines, filename):
-    """Save results to a file in './results/' directory"""
-    results_dir = os.path.join(os.getcwd(), 'results')  # 'results' folder in current directory
+    """Save results to 'hybrid-keyboard-optimizer/results/' directory"""
+    # Define path relative to the project root
+    results_dir = os.path.join(os.getcwd(), 'hybrid-keyboard-optimizer', 'results')
     os.makedirs(results_dir, exist_ok=True)
     
     filepath = os.path.join(results_dir, filename)
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write('\n'.join(output_lines))
-    
-    print(f"✓ Results saved to: {filepath}")
+    print(f"Results saved to: {filepath}")
+
+
 def add_comparison_results(output_lines, best_layout, history, config, bigrams):
     """Add comparison results to output lines"""
     qwerty_fitness = fitness_function_optimized([qwerty], bigrams)[0]
@@ -352,7 +354,7 @@ def add_comparison_results(output_lines, best_layout, history, config, bigrams):
 def run_experiments():
     """Run systematic experiments varying one parameter at a time"""
     
-    TEXT_FILE = 'hybrid-keyboard-optimizer/data/wonderful_wizard_oz_cln.txt'
+    TEXT_FILE = 'hybrid-keyboard-optimizer/data/moby_dick_cln.txt'
     SEED = 123
     
     # BASE PARAMETERS
