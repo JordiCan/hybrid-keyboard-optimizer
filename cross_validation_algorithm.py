@@ -199,6 +199,19 @@ def tournament_selection(population_with_fitness, tournament_size=3):
     winner = min(tournament, key=lambda item: item[1])
     return winner[0]
 
+# ============ UTILITY FUNCTIONS ============
+def seconds_to_hms(seconds):
+    """Convert seconds to HH:MM:SS format"""
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    secs = int(seconds % 60)
+    return f"{hours:02d}h{minutes:02d}m{secs:02d}s"
+
+def get_document_name(filepath):
+    """Extract document name from filepath without extension"""
+    basename = os.path.basename(filepath)
+    return os.path.splitext(basename)[0]
+
 # ============ MAIN GA ============
 def run_genetic_algorithm(text_file, pop_size=50, generations=50, elite_rate=0.1, 
                         tournament_size=3, mutation_rate=0.15, 
@@ -312,7 +325,6 @@ def print_latex_data(history, generations):
 
 def save_results(output_lines, filename):
     """Save results to 'hybrid-keyboard-optimizer/results/' directory"""
-    # Define path relative to the project root
     results_dir = os.path.join(os.getcwd(), 'hybrid-keyboard-optimizer', 'results')
     os.makedirs(results_dir, exist_ok=True)
     
@@ -357,6 +369,9 @@ def run_experiments():
     TEXT_FILE = 'hybrid-keyboard-optimizer/data/moby_dick_cln.txt'
     SEED = 123
     
+    # Extract document name for filenames
+    doc_name = get_document_name(TEXT_FILE)
+    
     # BASE PARAMETERS
     BASE_CONFIG = {
         'pop_size': 10000,
@@ -370,6 +385,7 @@ def run_experiments():
     print("\n" + "="*70)
     print("STARTING EXPERIMENTAL SUITE")
     print("="*70)
+    print(f"Document: {doc_name}")
     print(f"Base configuration: {BASE_CONFIG}")
     print(f"Each experiment varies ONE parameter while keeping others constant")
     print("="*70 + "\n")
@@ -392,16 +408,17 @@ def run_experiments():
             **config
         )
         time_end = time.time()
+        elapsed_time = time_end - time_start
         
         if best_layout:
             text_content = load_text_from_file(TEXT_FILE)
             bigrams = precompute_bigrams(text_content)
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
-            output_lines.append(f'\nTime consumed: {time_end-time_start:.2f}s')
+            output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
             
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"exp1_popsize_{pop_size}_{timestamp}.txt"
+            time_hms = seconds_to_hms(elapsed_time)
+            filename = f"exp1_popsize_{pop_size}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 2: Tournament Size (k)
@@ -422,16 +439,17 @@ def run_experiments():
             **config
         )
         time_end = time.time()
+        elapsed_time = time_end - time_start
         
         if best_layout:
             text_content = load_text_from_file(TEXT_FILE)
             bigrams = precompute_bigrams(text_content)
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
-            output_lines.append(f'\nTime consumed: {time_end-time_start:.2f}s')
+            output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
             
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"exp2_tournament_k{k}_{timestamp}.txt"
+            time_hms = seconds_to_hms(elapsed_time)
+            filename = f"exp2_tournament_k{k}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 3: Mutation Rate
@@ -452,16 +470,17 @@ def run_experiments():
             **config
         )
         time_end = time.time()
+        elapsed_time = time_end - time_start
         
         if best_layout:
             text_content = load_text_from_file(TEXT_FILE)
             bigrams = precompute_bigrams(text_content)
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
-            output_lines.append(f'\nTime consumed: {time_end-time_start:.2f}s')
+            output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
             
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"exp3_mutation_{mut_rate}_{timestamp}.txt"
+            time_hms = seconds_to_hms(elapsed_time)
+            filename = f"exp3_mutation_{mut_rate}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 4: Elite Size (Generational Replacement %)
@@ -483,16 +502,17 @@ def run_experiments():
             **config
         )
         time_end = time.time()
+        elapsed_time = time_end - time_start
         
         if best_layout:
             text_content = load_text_from_file(TEXT_FILE)
             bigrams = precompute_bigrams(text_content)
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
-            output_lines.append(f'\nTime consumed: {time_end-time_start:.2f}s')
+            output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
             
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"exp4_elite_{int(elite_pct*100)}pct_{timestamp}.txt"
+            time_hms = seconds_to_hms(elapsed_time)
+            filename = f"exp4_elite_{int(elite_pct*100)}pct_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
             save_results(output_lines, filename)
     
     print("\n\n" + "="*70)
@@ -507,8 +527,8 @@ if __name__ == "__main__":
     print("This script will run 4 series of experiments:")
     print("  1. Population Size: [1000, 10000, 100000, 1000000]")
     print("  2. Tournament Size (k): [2, 3, 5, 7, 10]")
-    print("  3. Mutation Rate: [0.05, 0.10, 0.15, 0.20, 0.30]")
-    print("  4. Elite Rate: [5%, 10%, 15%, 20%, 30%]")
+    print("  3. Mutation Rate: [0.05, 0.10, 0.15, 0.20, 0.30, 0.50, 0.75]")
+    print("  4. Elite Rate: [5%, 10%, 15%, 20%, 30%, 50%]")
     print("\nEach experiment varies ONE parameter while keeping others constant.")
     print("All results saved to individual .txt files in 'results/' directory.\n")
         
