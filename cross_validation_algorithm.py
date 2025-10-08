@@ -374,7 +374,7 @@ def run_experiments():
     
     # BASE PARAMETERS
     BASE_CONFIG = {
-        'pop_size': 10000,
+        'pop_size': 100000,
         'generations': 150,
         'elite_rate': 0.15,  
         'tournament_size': 5,
@@ -416,9 +416,8 @@ def run_experiments():
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
             output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
-            
-            time_hms = seconds_to_hms(elapsed_time)
-            filename = f"exp1_popsize_{pop_size}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
+
+            filename = f"exp1_popsize_{pop_size}_{doc_name}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 2: Tournament Size (k)
@@ -448,8 +447,7 @@ def run_experiments():
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
             output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
             
-            time_hms = seconds_to_hms(elapsed_time)
-            filename = f"exp2_tournament_k{k}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
+            filename = f"exp2_tournament_k{k}_{doc_name}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 3: Mutation Rate
@@ -478,9 +476,8 @@ def run_experiments():
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
             output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
-            
-            time_hms = seconds_to_hms(elapsed_time)
-            filename = f"exp3_mutation_{mut_rate}_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
+
+            filename = f"exp3_mutation_{mut_rate}_{doc_name}.txt"
             save_results(output_lines, filename)
     
     # EXPERIMENT 4: Elite Size (Generational Replacement %)
@@ -510,9 +507,8 @@ def run_experiments():
             
             add_comparison_results(output_lines, best_layout, history, config, bigrams)
             output_lines.append(f'\nTime consumed: {elapsed_time:.2f}s ({seconds_to_hms(elapsed_time)})')
-            
-            time_hms = seconds_to_hms(elapsed_time)
-            filename = f"exp4_elite_{int(elite_pct*100)}pct_{doc_name}_{int(elapsed_time)}s_{time_hms}.txt"
+
+            filename = f"exp4_elite_{int(elite_pct*100)}pct_{doc_name}.txt"
             save_results(output_lines, filename)
     
     print("\n\n" + "="*70)
