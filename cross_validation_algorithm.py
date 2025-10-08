@@ -366,7 +366,7 @@ def add_comparison_results(output_lines, best_layout, history, config, bigrams):
 def run_experiments():
     """Run systematic experiments varying one parameter at a time"""
     
-    TEXT_FILE = 'hybrid-keyboard-optimizer/data/moby_dick_cln.txt'
+    TEXT_FILE = 'hybrid-keyboard-optimizer/data/wonderful_wizard_oz_cln.txt'
     SEED = 123
     
     # Extract document name for filenames
