@@ -177,6 +177,8 @@ Figure \ref{fig:english_letter_frequency} shows an analysis of letter frequency 
     \label{fig:english_letter_frequency}
 \end{figure}
 
+
+
 Figure \ref{fig:letter_frequency_languages} shows the frequency distribution of the 26 most common letters used in Latin-based alphabets,
 covering all languages that use the Latin alphabet, such as Spanish, English, French, German, and Italian.
 It can be observed that the frequency of letters varies among different languages, which influences the optimal design of keyboard layouts for each language,
@@ -445,7 +447,7 @@ where $\mathcal{L}$ denotes the keyboard layout, $n$ is the length of the input 
 \subsection{Selection} \label{sec:selection}
 The algorithm implements tournament selection as the primary selection mechanism. The \texttt{tournament\_selection} function works as follows:
 \begin{enumerate}
-    \item Groups of k elements are established (where k is the size group). In this particular case having k=3 in order to balance between good and bad fitness individuals.
+    \item Groups of k elements are established (where k is the size group). In this particular case having k=5 in order to balance between good and bad fitness individuals.
     \item From each group we select the best individual (the one with the lowest fitness function).
     \item We perform successive tournaments to select both parments for the crossover operation.
 \end{enumerate}
@@ -475,7 +477,7 @@ A \texttt{fix\_duplicates} function ensures that any potential duplicates are re
 The mutation operator implements a simple swap mutation strategy:
 
 \begin{enumerate}
-    \item \texttt{Mutation detection:} each individual has a probability mutation\_rate (typically 0.25) of being mutated.
+    \item \texttt{Mutation detection:} each individual has a probability mutation\_rate = 0.15 of being mutated.
     \item \texttt{Swap Operation:} if mutation occurs, randomly select two positions and swap their characters.
     \item \texttt{Permutation Preservation:} the swap operation maintains the valid permutation property
 \end{enumerate}
@@ -941,15 +943,15 @@ The results of this comparison are presented in Table \ref{tab:cross_comparison}
 The results in Table \ref{tab:cross_comparison} show us how the layouts and the algorithm behaved:
 
 \begin{itemize}
-    \item \textbf{Confirmed Specialization:} Each layout performed best on its own book. 
+    \item \texttt{Confirmed Specialization:} Each layout performed best on its own book. 
     This demonstrates effective \textbf{exploitation}, where the algorithm perfected the best-found layouts by fine-tuning them to 
     the specific letter patterns of each text.
 
-    \item \textbf{Over-specialization of the Simple-Text Layout:} The \textit{Wizard of Oz} layout struggled on the complex text, 
+    \item \texttt{Over-specialization of the Simple-Text Layout:} The \textit{Wizard of Oz} layout struggled on the complex text, 
     with a 6.2\% performance drop. The simple book offered a limited field for \textbf{exploration}, leading the algorithm to 
     over-specialize on a narrow solution that lacked flexibility.
 
-    \item \textbf{Robustness of the Complex-Text Layout:} Conversely, the \textit{Moby Dick} layout was very robust, 
+    \item \texttt{Robustness of the Complex-Text Layout:} Conversely, the \textit{Moby Dick} layout was very robust, 
     dropping only 2.3\% on the simpler text. The book's rich language provided a better landscape for \textbf{exploration}, 
     allowing the algorithm to discover a more versatile solution before the final \textbf{exploitation} phase, resulting in a 
     more robust layout.
