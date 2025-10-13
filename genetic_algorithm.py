@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import time
 from random import randint, shuffle
 import matplotlib.pyplot as plt
 from collections import defaultdict
@@ -358,17 +359,19 @@ def print_latex_data(history, generations):
 
 # ============ MAIN ============
 if __name__ == "__main__":
-    POPULATION_SIZE = 10000     # Población grande para mayor diversidad
-    GENERATIONS = 100           # Más generaciones para convergencia
-    ELITE_SIZE = 1500           # 15% de elite (mantiene mejores soluciones)
-    TOURNAMENT_SIZE = 5         # Torneos más competitivos
-    CROSSOVER_RATE = 0.85       # Alto cruce para exploración
-    MUTATION_RATE = 0.15        # Mutación moderada (evita destruir buenos genes)
+    POPULATION_SIZE = 100000                 # Población grande para mayor diversidad
+    GENERATIONS = 100                       # Más generaciones para convergencia
+    ELITE_SIZE = 15000                        # 15% de elite (mantiene mejores soluciones)
+    TOURNAMENT_SIZE = 5                     # Torneos más competitivos
+    CROSSOVER_RATE = 0.85                   # Alto cruce para exploración
+    MUTATION_RATE = 0.15                    # Mutación moderada (evita destruir buenos genes)
     SEED=123
     LATEX_FORMAT=True
     CODIFICATION_FORMAT=True
     TEXT_FILE = 'hybrid-keyboard-optimizer/data/wonderful_wizard_oz_cln.txt'
-    
+
+
+    time_start=time.time()
     best_layout, evolution_history = run_genetic_algorithm(
         text_file=TEXT_FILE,
         pop_size=POPULATION_SIZE,
@@ -449,4 +452,6 @@ if __name__ == "__main__":
         if LATEX_FORMAT:
             print_latex_data(evolution_history, GENERATIONS)
         print_keyboard(best_layout, "OPTIMIZED LAYOUT")
+        time_end= time.time()
+        print(f'Time consumed: {time_end-time_start}')
         
