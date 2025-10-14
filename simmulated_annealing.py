@@ -167,8 +167,8 @@ def temperature_schedule(T_initial, iteration, schedule_type='geometric', k=0.95
         raise ValueError(f"Unknown schedule type: {schedule_type}")
 
 def simulated_annealing(text_file, initial_layout='random', T_initial=1000, 
-                       max_iterations=10000, schedule_type='geometric', k=0.95, 
-                       seed=None, verbose=True):
+                       max_iterations=100000, schedule_type='geometric', k=0.95, 
+                       seed=123, verbose=True):
     """
     Simulated Annealing for keyboard optimization
     
@@ -196,8 +196,8 @@ def simulated_annealing(text_file, initial_layout='random', T_initial=1000,
     
     # Initialize solution
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
-               'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 
-               ',', '.', ';', "'"]
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 
+            ',', '.', ';', "'"]
     
     if initial_layout == 'random':
         S_actual = random.sample(letters, len(letters))
@@ -275,7 +275,7 @@ def simulated_annealing(text_file, initial_layout='random', T_initial=1000,
             
             if verbose and i % 1000 == 0:
                 print(f"Iter {i:5}/{max_iterations} | T={T:8.2f} | "
-                      f"Current: {f_actual:>12,.1f} | Best: {f_mejor:>12,.1f}")
+                    f"Current: {f_actual:>12,.1f} | Best: {f_mejor:>12,.1f}")
     
     if verbose:
         print("=" * 70)
@@ -335,8 +335,8 @@ if __name__ == "__main__":
         initial_layout='random',  # 'random', 'qwerty', 'dvorak', 'qwertz', 'colemak'
         T_initial=1000,
         max_iterations=50000,
-        schedule_type='geometric',  # 'linear', 'geometric', 'logarithmic'
-        k=0.95,
+        schedule_type='logarithmic',  # 'linear', 'geometric', 'logarithmic'
+        k=0.0001,
         seed=123,
         verbose=True
     )

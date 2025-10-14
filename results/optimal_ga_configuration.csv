@@ -1,0 +1,3 @@
+Text,Population_Size,Tournament_k,Mutation_Rate,Elite_Percentage,Expected_Fitness
+Moby Dick,100000,5,0.15,20pct,765886.5
+Wizard of Oz,1000000,10,0.5,5pct,120633.7
