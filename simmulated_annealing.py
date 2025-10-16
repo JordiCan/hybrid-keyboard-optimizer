@@ -18,6 +18,40 @@ colemak = ['q', 'w', 'f', 'p', 'g', 'j', 'l', 'u', 'y', ';',
         'a', 'r', 's', 't', 'd', 'h', 'n', 'e', 'i', 'o',  
         'z', 'x', 'c', 'v', 'b', 'k', 'm', ',', '.', "'"]
 
+
+# Best from Exp1 - Moby Dick (Pop Size: 100000, Fitness: 769,434.6)
+exp1_best_moby_dick = ['x', 'v', 'w', 'c', 'h', 'i', 't', 'k', 'z', "'", 'f', 'm', 'r', 's', 'n', 'e', 'a', 'o', ',', '.', 'q', 'b', 'p', 'l', 'd', 'g', 'u', 'y', ';', 'j']
+
+# Best from Exp1 - Wizard of Oz (Pop Size: 1000000, Fitness: 121,733.0)
+exp1_best_wizard_oz = ['z', 'k', 'w', 's', 'h', 'i', 't', 'c', ',', ';', 'v', 'd', 'n', 'l', 'r', 'e', 'a', 'o', 'y', '.', 'q', 'x', 'b', 'f', 'm', 'g', 'u', 'p', 'j', "'"]
+
+# Best from Exp2 - Moby Dick (Tournament k: 5, Fitness: 769,434.6)
+exp2_best_moby_dick = ['x', 'v', 'w', 'c', 'h', 'i', 't', 'k', 'z', "'", 'f', 'm', 'r', 's', 'n', 'e', 'a', 'o', ',', '.', 'q', 'b', 'p', 'l', 'd', 'g', 'u', 'y', ';', 'j']
+
+# Best from Exp2 - Wizard of Oz (Tournament k: 10, Fitness: 122,030.3)
+exp2_best_wizard_oz = ['x', 'v', 'c', 'w', 'h', 'i', 't', 'k', 'z', "'", 'f', 'm', 'r', 's', 'n', 'e', 'a', 'o', 'g', '.', 'q', 'b', 'p', 'l', 'd', ',', 'y', 'u', 'j', ';']
+
+
+# Best from Exp3 - Moby Dick (Mutation: 0.15, Fitness: 769,434.6)
+exp3_best_moby_dick = ['x', 'v', 'w', 'c', 'h', 'i', 't', 'k', 'z', "'", 'f', 'm', 'r', 's', 'n', 'e', 'a', 'o', ',', '.', 'q', 'b', 'p', 'l', 'd', 'g', 'u', 'y', ';', 'j']
+
+# Best from Exp3 - Wizard of Oz (Mutation: 0.5, Fitness: 123,341.2)
+exp3_best_wizard_oz = ['q', 'p', 'u', 't', 'i', 'h', 's', 'c', 'b', 'x', '.', 'y', 'o', 'a', 'e', 'n', 'r', 'l', 'm', 'v', ';', 'j', ',', 'g', 'k', 'w', 'd', 'f', 'z', "'"]
+
+
+# Best from Exp4 - Moby Dick (Elite: 20pct, Fitness: 765,886.5)
+exp4_best_moby_dick = ["'", 'z', 'w', 't', 'i', 'h', 'c', 'f', 'k', 'x', '.', ',', 'o', 'a', 'e', 'n', 's', 'r', 'm', 'v', 'j', ';', 'y', 'u', 'g', 'd', 'l', 'p', 'b', 'q']
+
+# Best from Exp4 - Wizard of Oz (Elite: 5pct, Fitness: 120,633.7)
+exp4_best_wizard_oz = ['j', ';', 'p', 'y', ',', 'd', 'l', 'm', 'b', "'", '.', 'u', 'o', 'a', 'e', 'n', 's', 'r', 'f', 'v', 'q', 'z', 'g', 't', 'i', 'h', 'w', 'c', 'k', 'x']
+
+
+# BEST OVERALL - Moby Dick (exp4_elite_20pct, Fitness: 765,886.5)
+ga_best_moby_dick = ["'", 'z', 'w', 't', 'i', 'h', 'c', 'f', 'k', 'x', '.', ',', 'o', 'a', 'e', 'n', 's', 'r', 'm', 'v', 'j', ';', 'y', 'u', 'g', 'd', 'l', 'p', 'b', 'q']
+
+# BEST OVERALL - Wizard of Oz (exp4_elite_5pct, Fitness: 120,633.7)
+ga_best_wizard_oz = ['j', ';', 'p', 'y', ',', 'd', 'l', 'm', 'b', "'", '.', 'u', 'o', 'a', 'e', 'n', 's', 'r', 'f', 'v', 'q', 'z', 'g', 't', 'i', 'h', 'w', 'c', 'k', 'x']
+
 # ============ PRECOMPUTE MATRICES ============
 def get_finger_assigned(position):
     """Returns finger assignment for key position"""
@@ -159,10 +193,9 @@ def temperature_schedule(T_initial, iteration, schedule_type='geometric', k=0.95
     elif schedule_type == 'geometric':
         return T_initial * (k ** iteration)
     elif schedule_type == 'logarithmic':
-        T_current = T_initial
-        for _ in range(iteration):
-            T_current = T_current / (1 + k * T_current)
-        return T_current
+        # Enfriamiento logarítmico más eficiente (sin bucle)
+        # Aproximación: T_i ≈ T_initial / (1 + k * T_initial * iteration)
+        return T_initial / (1 + k * T_initial * iteration)
     else:
         raise ValueError(f"Unknown schedule type: {schedule_type}")
 
@@ -258,15 +291,19 @@ def simulated_annealing(text_file, initial_layout='random', T_initial=1000,
                 f_mejor = f_nuevo
         else:  # Worsening
             # Accept with probability e^(delta_f/T)
-            acceptance_prob = np.exp(delta_f / T) if T > 0 else 0
-            if random.random() < acceptance_prob:
-                S_actual = S_nuevo
-                f_actual = f_nuevo
-                history['accepted_moves'] += 1
+            # delta_f es negativo, así que e^(delta_f/T) < 1
+            if T > 0:
+                acceptance_prob = np.exp(delta_f / T)
+                if random.random() < acceptance_prob:
+                    S_actual = S_nuevo
+                    f_actual = f_nuevo
+                    history['accepted_moves'] += 1
+                else:
+                    history['rejected_moves'] += 1
             else:
                 history['rejected_moves'] += 1
         
-        # Record history
+        # Record history every 100 iterations
         if i % 100 == 0 or i == max_iterations - 1:
             history['iteration'].append(i)
             history['temperature'].append(T)
@@ -274,8 +311,9 @@ def simulated_annealing(text_file, initial_layout='random', T_initial=1000,
             history['best_fitness'].append(f_mejor)
             
             if verbose and i % 1000 == 0:
+                acc_rate = history['accepted_moves']/(history['accepted_moves']+history['rejected_moves'])*100 if (history['accepted_moves']+history['rejected_moves']) > 0 else 0
                 print(f"Iter {i:5}/{max_iterations} | T={T:8.2f} | "
-                    f"Current: {f_actual:>12,.1f} | Best: {f_mejor:>12,.1f}")
+                    f"Current: {f_actual:>12,.1f} | Best: {f_mejor:>12,.1f} | Acc: {acc_rate:5.1f}%")
     
     if verbose:
         print("=" * 70)
@@ -297,32 +335,83 @@ def print_keyboard(layout, name="Keyboard"):
         print("  " + " ".join(f"{key:>2}" for key in row_keys))
 
 def compare_layouts(best_layout, history, text_file):
-    """Compare best layout with standard layouts"""
+    """Compare best layout with standard layouts and all experimental GA layouts"""
     text = load_text_from_file(text_file)
     bigrams = precompute_bigrams(text)
     
-    qwerty_fitness = fitness_function(qwerty, bigrams)
-    dvorak_fitness = fitness_function(dvorak, bigrams)
-    qwertz_fitness = fitness_function(qwertz, bigrams)
-    colemak_fitness = fitness_function(colemak, bigrams)
-    best_fitness = history['best_fitness'][-1]
+    # Determine which dataset we're using
+    is_moby_dick = 'moby' in text_file.lower()
     
-    print(f"\n\nQWERTY Fitness: {qwerty_fitness:,.1f}")
-    print_keyboard(qwerty, "QWERTY")
-    print(f"\nDVORAK Fitness: {dvorak_fitness:,.1f}")
-    print_keyboard(dvorak, "DVORAK")
-    print(f"\nQWERTZ Fitness: {qwertz_fitness:,.1f}")
-    print_keyboard(qwertz, "QWERTZ")
-    print(f"\nCOLEMAK Fitness: {colemak_fitness:,.1f}")
-    print_keyboard(colemak, "COLEMAK")
+    # Standard layouts
+    layouts = {
+        'QWERTY': qwerty,
+        'DVORAK': dvorak,
+        'QWERTZ': qwertz,
+        'COLEMAK': colemak,
+    }
     
-    print(f"\n\nBest SA Fitness: {best_fitness:,.1f}")
-    print(f"Improvement vs QWERTY: {((qwerty_fitness - best_fitness) / qwerty_fitness) * 100:.2f}%")
-    print(f"Improvement vs DVORAK: {((dvorak_fitness - best_fitness) / dvorak_fitness) * 100:.2f}%")
-    print(f"Improvement vs QWERTZ: {((qwertz_fitness - best_fitness) / qwertz_fitness) * 100:.2f}%")
-    print(f"Improvement vs COLEMAK: {((colemak_fitness - best_fitness) / colemak_fitness) * 100:.2f}%")
+    # Add experimental GA layouts based on dataset
+    if is_moby_dick:
+        layouts.update({
+            'GA Exp1 (Pop=100k)': exp1_best_moby_dick,
+            'GA Exp2 (Tour k=5)': exp2_best_moby_dick,
+            'GA Exp3 (Mut=0.15)': exp3_best_moby_dick,
+            'GA Exp4 (Elite=20%)': exp4_best_moby_dick,
+            'GA BEST OVERALL': ga_best_moby_dick,
+        })
+    else:  # Wizard of Oz
+        layouts.update({
+            'GA Exp1 (Pop=1M)': exp1_best_wizard_oz,
+            'GA Exp2 (Tour k=10)': exp2_best_wizard_oz,
+            'GA Exp3 (Mut=0.5)': exp3_best_wizard_oz,
+            'GA Exp4 (Elite=5%)': exp4_best_wizard_oz,
+            'GA BEST OVERALL': ga_best_wizard_oz,
+        })
     
-    print_keyboard(best_layout, "OPTIMIZED SA LAYOUT")
+    # Calculate fitness for all layouts
+    results = []
+    print("\n" + "=" * 80)
+    print("LAYOUT COMPARISON")
+    print("=" * 80)
+    
+    for name, layout in layouts.items():
+        fitness = fitness_function(layout, bigrams)
+        results.append((name, layout, fitness))
+        print(f"\n{name} Fitness: {fitness:,.1f}")
+        print_keyboard(layout, name)
+    
+    # Add SA result
+    sa_fitness = history['best_fitness'][-1]
+    results.append(('SA OPTIMIZED', best_layout, sa_fitness))
+    print(f"\n\nSA OPTIMIZED Fitness: {sa_fitness:,.1f}")
+    print_keyboard(best_layout, "SA OPTIMIZED LAYOUT")
+    
+    # Sort by fitness (lower is better)
+    results.sort(key=lambda x: x[2])
+    
+    # Print ranking table
+    print("\n" + "=" * 80)
+    print("RANKING (Lower fitness is better)")
+    print("=" * 80)
+    print(f"{'Rank':<6} {'Layout':<25} {'Fitness':>15} {'vs Best':>12}")
+    print("-" * 80)
+    
+    best_fitness = results[0][2]
+    for rank, (name, layout, fitness) in enumerate(results, 1):
+        improvement = ((fitness - best_fitness) / best_fitness) * 100
+        print(f"{rank:<6} {name:<25} {fitness:>15,.1f} {improvement:>11.2f}%")
+    
+    # Print improvements of SA vs reference layouts
+    print("\n" + "=" * 80)
+    print("SA IMPROVEMENTS vs REFERENCE LAYOUTS")
+    print("=" * 80)
+    
+    reference_layouts = ['QWERTY', 'DVORAK', 'QWERTZ', 'COLEMAK', 'GA BEST OVERALL']
+    for name, _, fitness in results:
+        if name in reference_layouts:
+            improvement = ((fitness - sa_fitness) / fitness) * 100
+            status = "✓ Better" if improvement > 0 else "✗ Worse"
+            print(f"vs {name:<20}: {improvement:>7.2f}% {status}")
 
 # ============ MAIN ============
 if __name__ == "__main__":
@@ -330,13 +419,20 @@ if __name__ == "__main__":
     
     time_start = time.time()
     
+    # PARÁMETROS AJUSTADOS SEGÚN EL PDF DEL PROFESOR:
+    # El PDF muestra que la temperatura debe bajar MUY lentamente
+    # Con geometric k=0.9999: T baja de 1000 a ~6 en 50k iteraciones
+    # Con logarithmic k muy pequeño: enfriamiento ultra-lento
+    
     best_layout, history = simulated_annealing(
         text_file=TEXT_FILE,
         initial_layout='random',  # 'random', 'qwerty', 'dvorak', 'qwertz', 'colemak'
-        T_initial=1000,
+        T_initial=10000,  # T_initial MÁS ALTO para más exploración
         max_iterations=50000,
-        schedule_type='logarithmic',  # 'linear', 'geometric', 'logarithmic'
-        k=0.0001,
+        schedule_type='geometric',  # 'linear', 'geometric', 'logarithmic'
+        k=0.99992,  # Para geometric: 0.9999-0.99999 (MUY cercano a 1 = MUY lento)
+                    # Para logarithmic: 0.000001-0.00001 (MUY pequeño = MUY lento)
+                    # Para linear: k pequeño (0.1-1.0)
         seed=123,
         verbose=True
     )
