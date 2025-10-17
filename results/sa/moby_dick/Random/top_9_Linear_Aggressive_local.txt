@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #9
+================================================================================
+
+Experiment name: Linear_Aggressive
+Neighbor method: local
+Initial layout name: Random
+Initial layout spec: Random
+
+Scheduler config:
+- schedule_type: linear
+- T_initial: 10000
+- k: 0.2
+
+Performance:
+- Initial fitness: 2,184,888.00
+- Final fitness: 884,953.56
+- Improvement: 59.50%
+- Time (s): 19.76
+
+Final layout:
+
+Final Layout
+Row 1: z x g c d m n , k '
+Row 2: . f o a e r i t h w
+Row 3: j q y u s l p b v ;
+

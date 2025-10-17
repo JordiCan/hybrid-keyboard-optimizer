@@ -1,0 +1,14 @@
+TOP RUNS SUMMARY
+================================================================================
+Saved top 10 runs
+
+1. Experiment: Geometric_Balanced, Method: random, Initial Layout: Random, Final Fitness: 762,870.52, Time: 21.66s
+2. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: COLEMAK, Final Fitness: 762,870.52, Time: 20.90s
+3. Experiment: Geometric_Balanced, Method: random, Initial Layout: QWERTY, Final Fitness: 765,886.53, Time: 21.19s
+4. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: QWERTY, Final Fitness: 765,886.53, Time: 20.53s
+5. Experiment: Geometric_Balanced, Method: random, Initial Layout: GA_Exp3, Final Fitness: 765,886.53, Time: 22.01s
+6. Experiment: Geometric_Fast, Method: random, Initial Layout: GA_Exp4, Final Fitness: 765,886.53, Time: 21.83s
+7. Experiment: Geometric_Balanced, Method: random, Initial Layout: GA_Exp4, Final Fitness: 765,886.53, Time: 22.12s
+8. Experiment: Geometric_Slow, Method: random, Initial Layout: GA_Exp4, Final Fitness: 765,886.53, Time: 21.79s
+9. Experiment: Logarithmic_Fast, Method: random, Initial Layout: GA_Exp4, Final Fitness: 765,886.53, Time: 20.62s
+10. Experiment: Logarithmic_Slow, Method: random, Initial Layout: GA_Exp4, Final Fitness: 765,886.53, Time: 20.21s

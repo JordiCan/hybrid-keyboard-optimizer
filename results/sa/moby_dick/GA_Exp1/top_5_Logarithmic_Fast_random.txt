@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #5
+================================================================================
+
+Experiment name: Logarithmic_Fast
+Neighbor method: random
+Initial layout name: GA_Exp1
+Initial layout (as name): GA_Exp1
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 5000
+- k: 5e-05
+
+Performance:
+- Initial fitness: 769,434.63
+- Final fitness: 769,434.63
+- Improvement: 0.00%
+- Time (s): 21.57
+
+Final layout:
+
+Final Layout
+Row 1: x v w c h i t k z '
+Row 2: f m r s n e a o , .
+Row 3: q b p l d g u y ; j
+

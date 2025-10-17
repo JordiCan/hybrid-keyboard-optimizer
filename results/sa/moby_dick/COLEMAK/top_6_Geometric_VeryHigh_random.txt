@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #6
+================================================================================
+
+Experiment name: Geometric_VeryHigh
+Neighbor method: random
+Initial layout name: COLEMAK
+Initial layout (as name): COLEMAK
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 20000
+- k: 0.9997
+
+Performance:
+- Initial fitness: 1,368,939.99
+- Final fitness: 779,349.45
+- Improvement: 43.07%
+- Time (s): 20.83
+
+Final layout:
+
+Final Layout
+Row 1: q f c w h o t u k j
+Row 2: v m r s n i e a b .
+Row 3: z x p d l , g y ; '
+

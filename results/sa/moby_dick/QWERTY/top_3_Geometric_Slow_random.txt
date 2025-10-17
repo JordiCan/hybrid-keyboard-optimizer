@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #3
+================================================================================
+
+Experiment name: Geometric_Slow
+Neighbor method: random
+Initial layout name: QWERTY
+Initial layout (as name): QWERTY
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 15000
+- k: 0.99985
+
+Performance:
+- Initial fitness: 1,821,199.75
+- Final fitness: 767,943.57
+- Improvement: 57.83%
+- Time (s): 20.75
+
+Final layout:
+
+Final Layout
+Row 1: z k w t i h c p v x
+Row 2: . , o a e n s r m f
+Row 3: ' ; y u g d l b q j
+

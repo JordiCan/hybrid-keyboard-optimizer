@@ -1,0 +1,14 @@
+TOP RUNS SUMMARY
+================================================================================
+Saved top 10 runs
+
+1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: DVORAK, Final Fitness: 769,186.46, Time: 22.23s
+2. Experiment: Linear_Aggressive, Method: random, Initial Layout: DVORAK, Final Fitness: 771,550.36, Time: 20.60s
+3. Experiment: Geometric_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 780,486.66, Time: 20.14s
+4. Experiment: Geometric_Balanced, Method: random, Initial Layout: DVORAK, Final Fitness: 781,127.61, Time: 20.29s
+5. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: DVORAK, Final Fitness: 785,206.99, Time: 20.94s
+6. Experiment: Linear_Aggressive, Method: local, Initial Layout: DVORAK, Final Fitness: 799,561.27, Time: 20.60s
+7. Experiment: Geometric_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 800,870.24, Time: 20.39s
+8. Experiment: Logarithmic_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 825,848.53, Time: 22.47s
+9. Experiment: Logarithmic_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 847,815.32, Time: 20.30s
+10. Experiment: Geometric_VeryHigh, Method: local, Initial Layout: DVORAK, Final Fitness: 878,083.67, Time: 20.30s

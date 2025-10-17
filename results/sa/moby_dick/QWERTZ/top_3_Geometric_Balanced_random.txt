@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #3
+================================================================================
+
+Experiment name: Geometric_Balanced
+Neighbor method: random
+Initial layout name: QWERTZ
+Initial layout (as name): QWERTZ
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 10000
+- k: 0.9998
+
+Performance:
+- Initial fitness: 1,877,982.02
+- Final fitness: 771,213.75
+- Improvement: 58.93%
+- Time (s): 21.47
+
+Final layout:
+
+Final Layout
+Row 1: q z c t i h w f k x
+Row 2: . u o a e n s r m v
+Row 3: ' ; y g , d l p b j
+

@@ -152,9 +152,9 @@ def init_population(pop_size, known_distributions=False):
     
     if known_distributions:
         qwerty = [
-            'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',  
-            'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';',  
-            'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"   
+            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'],
+            ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"]
         ]
         
         dvorak = [
@@ -389,15 +389,10 @@ if __name__ == "__main__":
         text_content = load_text_from_file(TEXT_FILE)
         bigrams = precompute_bigrams(text_content)
         
-        qwerty = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 
-                'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', 
-                'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"]
-        
-        
         qwerty = [
-            'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',  
-            'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';',  
-            'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"   
+            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'],
+            ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', "'"]
         ]
         
         dvorak = [

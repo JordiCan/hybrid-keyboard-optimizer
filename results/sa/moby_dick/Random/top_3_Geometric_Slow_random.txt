@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #3
+================================================================================
+
+Experiment name: Geometric_Slow
+Neighbor method: random
+Initial layout name: Random
+Initial layout spec: Random
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 15000
+- k: 0.99985
+
+Performance:
+- Initial fitness: 2,359,261.38
+- Final fitness: 770,397.21
+- Improvement: 67.35%
+- Time (s): 20.48
+
+Final layout:
+
+Final Layout
+Row 1: q b m l d u p y ; j
+Row 2: v f r s n o e a , .
+Row 3: z k c w h i t g x '
+

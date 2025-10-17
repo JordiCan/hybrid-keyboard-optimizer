@@ -1,0 +1,14 @@
+TOP RUNS SUMMARY
+================================================================================
+Saved top 10 runs
+
+1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: COLEMAK, Final Fitness: 762,870.52, Time: 20.90s
+2. Experiment: Geometric_Balanced, Method: random, Initial Layout: COLEMAK, Final Fitness: 768,816.06, Time: 20.44s
+3. Experiment: Linear_Aggressive, Method: random, Initial Layout: COLEMAK, Final Fitness: 768,853.61, Time: 20.75s
+4. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: COLEMAK, Final Fitness: 770,035.94, Time: 20.49s
+5. Experiment: Geometric_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 770,296.30, Time: 20.60s
+6. Experiment: Logarithmic_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 796,447.03, Time: 21.43s
+7. Experiment: Geometric_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 843,251.72, Time: 20.56s
+8. Experiment: Logarithmic_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 882,922.99, Time: 20.30s
+9. Experiment: Geometric_VeryHigh, Method: local, Initial Layout: COLEMAK, Final Fitness: 907,012.57, Time: 19.57s
+10. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: COLEMAK, Final Fitness: 912,688.91, Time: 19.76s

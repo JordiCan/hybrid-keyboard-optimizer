@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #8
+================================================================================
+
+Experiment name: Logarithmic_Slow
+Neighbor method: random
+Initial layout name: COLEMAK
+Initial layout (as name): COLEMAK
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 10000
+- k: 2e-05
+
+Performance:
+- Initial fitness: 1,368,939.99
+- Final fitness: 882,922.99
+- Improvement: 35.50%
+- Time (s): 20.30
+
+Final layout:
+
+Final Layout
+Row 1: j . u c m r s p k q
+Row 2: f b t a e o n i l v
+Row 3: ' z w g d h , y ; x
+
