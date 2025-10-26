@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #5
+================================================================================
+
+Experiment name: Logarithmic_Fast
+Neighbor method: random
+Initial layout name: QWERTZ
+Initial layout (as name): QWERTZ
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 5000
+- k: 5e-05
+
+Performance:
+- Initial fitness: 1,877,982.02
+- Final fitness: 779,904.58
+- Improvement: 58.47%
+- Time (s): 25.60
+
+Final layout:
+
+Final Layout
+Row 1: x p c s h i t u k q
+Row 2: v m l r n e a o g .
+Row 3: z ; b f d , w y j '
+

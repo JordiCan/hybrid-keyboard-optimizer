@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #2
+================================================================================
+
+Experiment name: Geometric_Balanced
+Neighbor method: random
+Initial layout name: Random
+Initial layout spec: Random
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 10000
+- k: 0.9998
+
+Performance:
+- Initial fitness: 404,692.52
+- Final fitness: 120,638.09
+- Improvement: 70.19%
+- Time (s): 15.39
+
+Final layout:
+
+Final Layout
+Row 1: q z c t i h s w k x
+Row 2: . u o a e n r l f v
+Row 3: j ; g y , d m p b '
+

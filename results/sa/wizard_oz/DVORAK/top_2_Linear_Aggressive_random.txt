@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #2
+================================================================================
+
+Experiment name: Linear_Aggressive
+Neighbor method: random
+Initial layout name: DVORAK
+Initial layout (as name): DVORAK
+
+Scheduler config:
+- schedule_type: linear
+- T_initial: 10000
+- k: 0.2
+
+Performance:
+- Initial fitness: 230,728.31
+- Final fitness: 120,813.30
+- Improvement: 47.64%
+- Time (s): 15.39
+
+Final layout:
+
+Final Layout
+Row 1: z b p m d , y g j q
+Row 2: v f l r n e a o u .
+Row 3: x k w s h i t c ; '
+

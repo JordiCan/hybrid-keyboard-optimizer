@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #10
+================================================================================
+
+Experiment name: Linear_Aggressive
+Neighbor method: local
+Initial layout name: QWERTY
+Initial layout (as name): QWERTY
+
+Scheduler config:
+- schedule_type: linear
+- T_initial: 10000
+- k: 0.2
+
+Performance:
+- Initial fitness: 273,549.67
+- Final fitness: 129,846.21
+- Improvement: 52.53%
+- Time (s): 14.32
+
+Final layout:
+
+Final Layout
+Row 1: z p , f g m d u b q
+Row 2: . y o e a n s r l v
+Row 3: j x k t i h w c ; '
+

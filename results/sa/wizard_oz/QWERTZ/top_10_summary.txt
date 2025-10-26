@@ -1,0 +1,14 @@
+TOP RUNS SUMMARY
+================================================================================
+Saved top 10 runs
+
+1. Experiment: Geometric_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 120,633.65, Time: 16.14s
+2. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: QWERTZ, Final Fitness: 120,638.09, Time: 15.30s
+3. Experiment: Logarithmic_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 121,128.47, Time: 15.27s
+4. Experiment: Linear_Aggressive, Method: random, Initial Layout: QWERTZ, Final Fitness: 121,996.47, Time: 15.19s
+5. Experiment: Geometric_Balanced, Method: random, Initial Layout: QWERTZ, Final Fitness: 122,400.04, Time: 18.11s
+6. Experiment: Logarithmic_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 126,388.51, Time: 15.37s
+7. Experiment: Geometric_Balanced, Method: local, Initial Layout: QWERTZ, Final Fitness: 126,630.45, Time: 14.03s
+8. Experiment: Geometric_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 126,977.45, Time: 15.44s
+9. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: QWERTZ, Final Fitness: 127,779.41, Time: 14.27s
+10. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: QWERTZ, Final Fitness: 133,681.35, Time: 15.52s

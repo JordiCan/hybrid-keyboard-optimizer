@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #9
+================================================================================
+
+Experiment name: Geometric_VeryHigh
+Neighbor method: local
+Initial layout name: QWERTY
+Initial layout (as name): QWERTY
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 20000
+- k: 0.9997
+
+Performance:
+- Initial fitness: 1,821,199.75
+- Final fitness: 886,989.45
+- Improvement: 51.30%
+- Time (s): 20.32
+
+Final layout:
+
+Final Layout
+Row 1: q . p l m g u y b j
+Row 2: c r e s n a i o d k
+Row 3: z x f t w h v , ; '
+

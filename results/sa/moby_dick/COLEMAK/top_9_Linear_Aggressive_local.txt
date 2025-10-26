@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #9
+================================================================================
+
+Experiment name: Linear_Aggressive
+Neighbor method: local
+Initial layout name: COLEMAK
+Initial layout (as name): COLEMAK
+
+Scheduler config:
+- schedule_type: linear
+- T_initial: 10000
+- k: 0.2
+
+Performance:
+- Initial fitness: 1,368,939.99
+- Final fitness: 822,078.25
+- Improvement: 39.95%
+- Time (s): 23.14
+
+Final layout:
+
+Final Layout
+Row 1: q k d n s i t u g ;
+Row 2: v c l r h e a o b y
+Row 3: z j m w f , p . x '
+

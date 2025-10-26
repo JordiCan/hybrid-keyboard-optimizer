@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #4
+================================================================================
+
+Experiment name: Geometric_Fast
+Neighbor method: random
+Initial layout name: GA_Exp3
+Initial layout (as name): GA_Exp3
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 5000
+- k: 0.9995
+
+Performance:
+- Initial fitness: 123,341.22
+- Final fitness: 123,341.22
+- Improvement: 0.00%
+- Time (s): 15.25
+
+Final layout:
+
+Final Layout
+Row 1: q p u t i h s c b x
+Row 2: . y o a e n r l m v
+Row 3: ; j , g k w d f z '
+

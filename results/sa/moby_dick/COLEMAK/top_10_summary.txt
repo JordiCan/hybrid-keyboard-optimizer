@@ -2,13 +2,13 @@ TOP RUNS SUMMARY
 ================================================================================
 Saved top 10 runs
 
-1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: COLEMAK, Final Fitness: 762,870.52, Time: 20.90s
-2. Experiment: Geometric_Balanced, Method: random, Initial Layout: COLEMAK, Final Fitness: 768,816.06, Time: 20.44s
-3. Experiment: Linear_Aggressive, Method: random, Initial Layout: COLEMAK, Final Fitness: 768,853.61, Time: 20.75s
-4. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: COLEMAK, Final Fitness: 770,035.94, Time: 20.49s
-5. Experiment: Geometric_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 770,296.30, Time: 20.60s
-6. Experiment: Logarithmic_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 796,447.03, Time: 21.43s
-7. Experiment: Geometric_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 843,251.72, Time: 20.56s
-8. Experiment: Logarithmic_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 882,922.99, Time: 20.30s
-9. Experiment: Geometric_VeryHigh, Method: local, Initial Layout: COLEMAK, Final Fitness: 907,012.57, Time: 19.57s
-10. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: COLEMAK, Final Fitness: 912,688.91, Time: 19.76s
+1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: COLEMAK, Final Fitness: 768,816.06, Time: 22.42s
+2. Experiment: Linear_Aggressive, Method: random, Initial Layout: COLEMAK, Final Fitness: 769,367.92, Time: 24.79s
+3. Experiment: Geometric_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 777,629.10, Time: 22.43s
+4. Experiment: Geometric_Balanced, Method: random, Initial Layout: COLEMAK, Final Fitness: 786,529.79, Time: 22.17s
+5. Experiment: Logarithmic_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 788,019.13, Time: 22.81s
+6. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: COLEMAK, Final Fitness: 792,145.71, Time: 23.39s
+7. Experiment: Geometric_Fast, Method: random, Initial Layout: COLEMAK, Final Fitness: 797,359.37, Time: 25.33s
+8. Experiment: Logarithmic_Slow, Method: random, Initial Layout: COLEMAK, Final Fitness: 807,613.01, Time: 22.90s
+9. Experiment: Linear_Aggressive, Method: local, Initial Layout: COLEMAK, Final Fitness: 822,078.25, Time: 23.14s
+10. Experiment: Geometric_Slow, Method: local, Initial Layout: COLEMAK, Final Fitness: 893,230.10, Time: 23.62s

@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #10
+================================================================================
+
+Experiment name: Geometric_Balanced
+Neighbor method: local
+Initial layout name: GA_Exp1
+Initial layout (as name): GA_Exp1
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 10000
+- k: 0.9998
+
+Performance:
+- Initial fitness: 121,733.02
+- Final fitness: 121,733.02
+- Improvement: 0.00%
+- Time (s): 15.41
+
+Final layout:
+
+Final Layout
+Row 1: z k w s h i t c , ;
+Row 2: v d n l r e a o y .
+Row 3: q x b f m g u p j '
+

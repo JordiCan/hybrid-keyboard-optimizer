@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #5
+================================================================================
+
+Experiment name: Logarithmic_Slow
+Neighbor method: random
+Initial layout name: GA_Exp4
+Initial layout (as name): GA_Exp4
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 10000
+- k: 2e-05
+
+Performance:
+- Initial fitness: 120,633.65
+- Final fitness: 120,633.65
+- Improvement: 0.00%
+- Time (s): 18.09
+
+Final layout:
+
+Final Layout
+Row 1: j ; p y , d l m b '
+Row 2: . u o a e n s r f v
+Row 3: q z g t i h w c k x
+
