@@ -2,7 +2,7 @@
 
 > *What if QWERTY isn't the best we can do?*
 
-A sophisticated hybrid optimization system that reimagines keyboard layout design by combining the exploratory power of **Genetic Algorithms** with the refinement capabilities of **Simulated Annealing**. This project doesn't just shuffle keys—it scientifically engineers layouts that minimize finger fatigue, maximize typing speed, and create a more natural typing experience.
+A sophisticated hybrid optimization system that reimagines keyboard layout design by combining the exploratory power of **Genetic Algorithms** with the refinement capabilities of **Simulated Annealing**. This project doesn't just shuffle keys, it scientifically engineers layouts that minimize finger fatigue, maximize typing speed, and create a more natural typing experience.
 
 ## 🌟 Why This Matters
 
