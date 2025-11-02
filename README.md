@@ -45,22 +45,11 @@ This project represents the intersection of:
 
 The optimization process analyzes millions of potential configurations, evaluating each against real-world typing data to find layouts that feel intuitive and perform exceptionally.
 
-## 📊 Project Structure
-
-```
-hybrid-keyboard-optimizer/
-├── 📓 Jupyter Notebooks (83.4%)  - Interactive optimization experiments
-├── 📄 TeX Documents (12.8%)      - Research documentation and analysis
-└── 🐍 Python Scripts (3.8%)      - Core optimization algorithms
-```
 
 ## 🚀 Getting Started
 
-Open the Jupyter notebooks to dive into the optimization process:
+Open the code to dive into the optimization process:
 
-```bash
-jupyter notebook
-```
 
 Explore:
 - **Algorithm Implementation**: See how GA and SA work together
