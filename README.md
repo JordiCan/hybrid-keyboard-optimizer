@@ -2,7 +2,7 @@
 
 > *What if QWERTY isn't the best we can do?*
 
-A sophisticated hybrid optimization system that reimagines keyboard layout design by combining the exploratory power of **Genetic Algorithms** with the refinement capabilities of **Simulated Annealing**. This project doesn't just shuffle keys, it scientifically engineers layouts that minimize finger fatigue, maximize typing speed, and create a more natural typing experience.
+A sophisticated hybrid optimization system that reimagines keyboard layout design by combining the exploratory power of **Genetic Algorithms** with the refinement capabilities of **Simulated Annealing**. This project doesn't just shuffle keys—it scientifically engineers layouts that minimize finger fatigue, maximize typing speed, and create a more natural typing experience.
 
 ## 🌟 Why This Matters
 
@@ -45,17 +45,32 @@ This project represents the intersection of:
 
 The optimization process analyzes millions of potential configurations, evaluating each against real-world typing data to find layouts that feel intuitive and perform exceptionally.
 
+## 📦 Dependencies
+
+This project requires minimal dependencies. Install them using:
+
+```bash
+pip install -r requirements.txt
+```
+
+The `requirements.txt` includes:
+- **numpy**: For matrix operations and numerical computations
+- **matplotlib**: For visualizing optimization progress
+- **jupyter**: For running interactive notebooks
 
 ## 🚀 Getting Started
-
 
 Open the Jupyter notebooks to dive into the optimization process:
 
 ```bash
-jupyter simulated_annealing.ipynb genetic_algorithm.ipynb
+jupyter notebook
 ```
 
-Explore:
+Then explore:
+- `genetic_algorithm.ipynb` - Genetic Algorithm implementation
+- `simulated_annealing.ipynb` - Simulated Annealing approach
+
+**What you'll find:**
 - **Algorithm Implementation**: See how GA and SA work together
 - **Visualization**: Watch layouts evolve in real-time
 - **Comparative Analysis**: Benchmark against QWERTY, Dvorak, and Colemak
