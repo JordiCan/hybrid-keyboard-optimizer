@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #10
+================================================================================
+
+Experiment name: Geometric_UltraSlow
+Neighbor method: local
+Initial layout name: QWERTY
+Initial layout (as name): QWERTY
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 10000
+- k: 0.99995
+
+Performance:
+- Initial fitness: 273,549.67
+- Final fitness: 134,919.97
+- Improvement: 50.68%
+- Time (s): 14.00
+
+Final layout:
+
+Final Layout
+Row 1: q . b m k y d w , z
+Row 2: p l r o n e a i f g
+Row 3: j x v s h c t u ; '
+

@@ -12,7 +12,7 @@ Schedule: geometric, T_initial: 5000, k: 0.9995
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 16.36s
+Time: 14.77s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -25,7 +25,7 @@ Schedule: geometric, T_initial: 10000, k: 0.9998
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 16.65s
+Time: 14.99s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -38,7 +38,7 @@ Schedule: geometric, T_initial: 15000, k: 0.99985
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 16.94s
+Time: 14.74s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -51,7 +51,7 @@ Schedule: logarithmic, T_initial: 5000, k: 5e-05
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 16.01s
+Time: 14.59s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -64,7 +64,7 @@ Schedule: logarithmic, T_initial: 10000, k: 2e-05
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 18.09s
+Time: 14.53s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -77,7 +77,7 @@ Schedule: linear, T_initial: 10000, k: 0.2
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 16.04s
+Time: 14.46s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -90,7 +90,7 @@ Schedule: geometric, T_initial: 20000, k: 0.9997
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.23s
+Time: 14.78s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -103,7 +103,7 @@ Schedule: geometric, T_initial: 10000, k: 0.99995
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.03s
+Time: 14.95s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -120,7 +120,7 @@ Schedule: geometric, T_initial: 5000, k: 0.9995
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 14.41s
+Time: 14.29s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -133,7 +133,7 @@ Schedule: geometric, T_initial: 10000, k: 0.9998
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.57s
+Time: 14.09s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -146,7 +146,7 @@ Schedule: geometric, T_initial: 15000, k: 0.99985
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.42s
+Time: 13.65s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -159,7 +159,7 @@ Schedule: logarithmic, T_initial: 5000, k: 5e-05
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.45s
+Time: 14.00s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -172,7 +172,7 @@ Schedule: logarithmic, T_initial: 10000, k: 2e-05
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.26s
+Time: 13.83s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -185,7 +185,7 @@ Schedule: linear, T_initial: 10000, k: 0.2
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.64s
+Time: 14.07s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -198,7 +198,7 @@ Schedule: geometric, T_initial: 20000, k: 0.9997
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 15.40s
+Time: 13.75s
 
 Final Layout
 Row 1: j ; p y , d l m b '
@@ -211,7 +211,7 @@ Schedule: geometric, T_initial: 10000, k: 0.99995
 Initial Fitness: 120,633.65
 Final Fitness: 120,633.65
 Improvement: 0.00%
-Time: 14.18s
+Time: 13.63s
 
 Final Layout
 Row 1: j ; p y , d l m b '

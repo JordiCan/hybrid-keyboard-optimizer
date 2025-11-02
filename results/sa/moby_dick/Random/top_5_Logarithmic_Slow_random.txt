@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #5
+================================================================================
+
+Experiment name: Logarithmic_Slow
+Neighbor method: random
+Initial layout name: Random
+Initial layout spec: Random
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 10000
+- k: 2e-05
+
+Performance:
+- Initial fitness: 2,162,861.75
+- Final fitness: 781,127.61
+- Improvement: 63.88%
+- Time (s): 26.23
+
+Final layout:
+
+Final Layout
+Row 1: ' ; , g k m d p x z
+Row 2: . y a e i n s r l v
+Row 3: j q u t o h w c b f
+

@@ -7,25 +7,38 @@ Dataset: moby_dick
 RANDOM SWAP RESULTS
 ====================================================================================================
 
-Experiment: Geometric_UltraSlow
-Schedule: geometric, T_initial: 10000, k: 0.99995
-Initial Fitness: 2,126,765.52
-Final Fitness: 773,196.27
-Improvement: 63.64%
-Time: 23.58s
-
-Final Layout
-Row 1: x ; w c i h t p k z
-Row 2: . , o a e n s r m v
-Row 3: ' j y g u d l f b q
-
-
 Experiment: Linear_Aggressive
 Schedule: linear, T_initial: 10000, k: 0.2
-Initial Fitness: 2,711,544.77
+Initial Fitness: 2,588,239.11
+Final Fitness: 762,870.52
+Improvement: 70.53%
+Time: 23.33s
+
+Final Layout
+Row 1: z w c d n i h g k ;
+Row 2: v m r s t o a e , .
+Row 3: j q b f l u p y x '
+
+
+Experiment: Geometric_UltraSlow
+Schedule: geometric, T_initial: 10000, k: 0.99995
+Initial Fitness: 2,376,457.41
+Final Fitness: 769,186.46
+Improvement: 67.63%
+Time: 23.39s
+
+Final Layout
+Row 1: ' k g t i h c w v x
+Row 2: . u o a e n s r m f
+Row 3: q ; b y , l d p j z
+
+
+Experiment: Geometric_Slow
+Schedule: geometric, T_initial: 15000, k: 0.99985
+Initial Fitness: 2,280,965.56
 Final Fitness: 774,634.31
-Improvement: 71.43%
-Time: 25.60s
+Improvement: 66.04%
+Time: 34.16s
 
 Final Layout
 Row 1: ' ; y g , d m b j z
@@ -35,80 +48,67 @@ Row 3: q k w t i h s c v x
 
 Experiment: Geometric_Balanced
 Schedule: geometric, T_initial: 10000, k: 0.9998
-Initial Fitness: 2,403,821.07
-Final Fitness: 775,841.56
-Improvement: 67.72%
-Time: 23.24s
+Initial Fitness: 1,968,841.45
+Final Fitness: 778,895.15
+Improvement: 60.44%
+Time: 38.22s
 
 Final Layout
-Row 1: ' x y p u m f b j q
-Row 2: . , e a o r s t h w
-Row 3: ; k d g i l n c v z
-
-
-Experiment: Geometric_Slow
-Schedule: geometric, T_initial: 15000, k: 0.99985
-Initial Fitness: 2,637,674.39
-Final Fitness: 779,656.12
-Improvement: 70.44%
-Time: 23.18s
-
-Final Layout
-Row 1: q x b f m u p y j '
-Row 2: v d l s r e a o , .
-Row 3: z k n t h i c g w ;
-
-
-Experiment: Geometric_VeryHigh
-Schedule: geometric, T_initial: 20000, k: 0.9997
-Initial Fitness: 2,005,810.41
-Final Fitness: 782,608.20
-Improvement: 60.98%
-Time: 25.69s
-
-Final Layout
-Row 1: z q b l d y p u ; j
-Row 2: v m r s n e a o g ,
-Row 3: x k f c h i t w . '
-
-
-Experiment: Logarithmic_Fast
-Schedule: logarithmic, T_initial: 5000, k: 5e-05
-Initial Fitness: 2,379,576.16
-Final Fitness: 804,235.87
-Improvement: 66.20%
-Time: 22.86s
-
-Final Layout
-Row 1: x k , s h c t w . '
-Row 2: v p r o n e a i g f
-Row 3: q ; m b l u d y z j
+Row 1: q k c s h i t u w ;
+Row 2: v f l r n e a o g .
+Row 3: z x b m d , p y j '
 
 
 Experiment: Logarithmic_Slow
 Schedule: logarithmic, T_initial: 10000, k: 2e-05
-Initial Fitness: 1,916,266.80
-Final Fitness: 816,281.49
-Improvement: 57.40%
-Time: 22.84s
+Initial Fitness: 2,162,861.75
+Final Fitness: 781,127.61
+Improvement: 63.88%
+Time: 26.23s
 
 Final Layout
-Row 1: ' ; g t d h w , . x
-Row 2: k y i a e n s r m v
-Row 3: z j b u o l c p f q
+Row 1: ' ; , g k m d p x z
+Row 2: . y a e i n s r l v
+Row 3: j q u t o h w c b f
+
+
+Experiment: Geometric_VeryHigh
+Schedule: geometric, T_initial: 20000, k: 0.9997
+Initial Fitness: 2,177,095.02
+Final Fitness: 788,541.54
+Improvement: 63.78%
+Time: 23.56s
+
+Final Layout
+Row 1: z j v c d g k . x '
+Row 2: w h t s n i e a , ;
+Row 3: f b m r l o u p y q
+
+
+Experiment: Logarithmic_Fast
+Schedule: logarithmic, T_initial: 5000, k: 5e-05
+Initial Fitness: 1,988,359.27
+Final Fitness: 793,208.34
+Improvement: 60.11%
+Time: 22.71s
+
+Final Layout
+Row 1: j b u t a h l c p q
+Row 2: . y o e i n s r m v
+Row 3: ' ; , g k d w f z x
 
 
 Experiment: Geometric_Fast
 Schedule: geometric, T_initial: 5000, k: 0.9995
-Initial Fitness: 2,890,675.80
-Final Fitness: 838,124.43
-Improvement: 71.01%
-Time: 22.67s
+Initial Fitness: 1,762,341.79
+Final Fitness: 840,199.44
+Improvement: 52.32%
+Time: 31.39s
 
 Final Layout
-Row 1: z ; w c n g d , k '
-Row 2: v h s o r i e a t .
-Row 3: q x b m l f u p y j
+Row 1: j z p c w k v . x '
+Row 2: f m r e n o i a d ,
+Row 3: q b l s t u h g y ;
 
 
 ====================================================================================================
@@ -117,106 +117,106 @@ LOCAL SWAP RESULTS
 
 Experiment: Geometric_Slow
 Schedule: geometric, T_initial: 15000, k: 0.99985
-Initial Fitness: 2,378,038.78
-Final Fitness: 868,173.38
-Improvement: 63.49%
-Time: 23.08s
+Initial Fitness: 2,248,587.49
+Final Fitness: 866,852.96
+Improvement: 61.45%
+Time: 22.35s
 
 Final Layout
-Row 1: j q k , g c p v z x
-Row 2: u d o e i n s r m b
-Row 3: ; y f t a h l w . '
-
-
-Experiment: Geometric_UltraSlow
-Schedule: geometric, T_initial: 10000, k: 0.99995
-Initial Fitness: 2,307,517.75
-Final Fitness: 877,980.99
-Improvement: 61.95%
-Time: 23.60s
-
-Final Layout
-Row 1: z j v m n g d , ; x
-Row 2: f y r a s o i e l b
-Row 3: ' . c u h w t p k q
+Row 1: j x k . p m c y q z
+Row 2: f b u e a r o s l v
+Row 3: ' g , t i h n d w ;
 
 
 Experiment: Linear_Aggressive
 Schedule: linear, T_initial: 10000, k: 0.2
-Initial Fitness: 2,596,336.50
-Final Fitness: 912,980.36
-Improvement: 64.84%
-Time: 24.30s
+Initial Fitness: 3,306,304.62
+Final Fitness: 908,678.70
+Improvement: 72.52%
+Time: 21.55s
 
 Final Layout
-Row 1: z . y t g h w p , ;
-Row 2: d s e a o n i r m v
-Row 3: ' x k c u l f b q j
+Row 1: ' y , b u p l v q j
+Row 2: . h e a i t s o r m
+Row 3: ; k w g f c n d z x
 
 
-Experiment: Geometric_VeryHigh
-Schedule: geometric, T_initial: 20000, k: 0.9997
-Initial Fitness: 2,474,586.04
-Final Fitness: 941,771.93
-Improvement: 61.94%
-Time: 22.37s
+Experiment: Geometric_UltraSlow
+Schedule: geometric, T_initial: 10000, k: 0.99995
+Initial Fitness: 1,556,616.90
+Final Fitness: 921,792.96
+Improvement: 40.78%
+Time: 25.64s
 
 Final Layout
-Row 1: j x d g y l b , ; '
-Row 2: s i e a o n r t h w
-Row 3: z q p c u m f v k .
+Row 1: j x p m l b c y k z
+Row 2: f u r e n o a i s .
+Row 3: ' , v w h d t g q ;
 
 
 Experiment: Geometric_Balanced
 Schedule: geometric, T_initial: 10000, k: 0.9998
-Initial Fitness: 2,437,624.47
-Final Fitness: 1,080,131.45
-Improvement: 55.69%
-Time: 22.62s
+Initial Fitness: 2,220,196.31
+Final Fitness: 939,344.44
+Improvement: 57.69%
+Time: 22.88s
 
 Final Layout
-Row 1: ' x y m . g b v ; z
-Row 2: h a e n o r t i s l
-Row 3: k , d p u c w f j q
+Row 1: q x p y , f l v . ;
+Row 2: m u o a e r s i n d
+Row 3: ' k b t w h c g j z
+
+
+Experiment: Geometric_VeryHigh
+Schedule: geometric, T_initial: 20000, k: 0.9997
+Initial Fitness: 2,772,649.49
+Final Fitness: 1,004,334.41
+Improvement: 63.78%
+Time: 21.47s
+
+Final Layout
+Row 1: z k f d l , y s v j
+Row 2: w c h n r o e a t i
+Row 3: x q g p m ; u b . '
 
 
 Experiment: Logarithmic_Slow
 Schedule: logarithmic, T_initial: 10000, k: 2e-05
-Initial Fitness: 2,340,073.17
-Final Fitness: 1,120,179.72
-Improvement: 52.13%
-Time: 23.26s
+Initial Fitness: 2,423,608.46
+Final Fitness: 1,120,702.45
+Improvement: 53.76%
+Time: 21.95s
 
 Final Layout
-Row 1: k , g n y r b ; x '
-Row 2: p t o e d h a i l c
-Row 3: j f s u w q m v . z
-
-
-Experiment: Logarithmic_Fast
-Schedule: logarithmic, T_initial: 5000, k: 5e-05
-Initial Fitness: 2,304,287.23
-Final Fitness: 1,171,139.00
-Improvement: 49.18%
-Time: 24.16s
-
-Final Layout
-Row 1: k y b c f j x l v ;
-Row 2: m d i h t u o e n a
-Row 3: ' z w s p , r g . q
+Row 1: q b c m x ' n , v j
+Row 2: u l r a d o i e s y
+Row 3: z k f g h . t p w ;
 
 
 Experiment: Geometric_Fast
 Schedule: geometric, T_initial: 5000, k: 0.9995
-Initial Fitness: 2,414,774.28
-Final Fitness: 1,185,783.31
-Improvement: 50.89%
-Time: 23.22s
+Initial Fitness: 2,336,719.97
+Final Fitness: 1,177,847.21
+Improvement: 49.59%
+Time: 23.36s
 
 Final Layout
-Row 1: q w u l c j f i g .
-Row 2: b r o s n y a e t h
-Row 3: z , p m ; ' d k v x
+Row 1: j x v f z l m p . ;
+Row 2: r a e o y n i t s u
+Row 3: q c h d g w b , k '
+
+
+Experiment: Logarithmic_Fast
+Schedule: logarithmic, T_initial: 5000, k: 5e-05
+Initial Fitness: 2,658,305.19
+Final Fitness: 1,180,407.08
+Improvement: 55.60%
+Time: 22.44s
+
+Final Layout
+Row 1: k h s , q v t c w x
+Row 2: f a e d u n i o l p
+Row 3: ' z g y j ; r m b .
 
 
 ====================================================================================================
@@ -224,31 +224,31 @@ BEST RESULTS SUMMARY
 ====================================================================================================
 
 Best Random Swap:
-Experiment: Geometric_UltraSlow
-Final Fitness: 773,196.27
-Improvement: 63.64%
+Experiment: Linear_Aggressive
+Final Fitness: 762,870.52
+Improvement: 70.53%
 
 Best Random Layout
-Row 1: x ; w c i h t p k z
-Row 2: . , o a e n s r m v
-Row 3: ' j y g u d l f b q
+Row 1: z w c d n i h g k ;
+Row 2: v m r s t o a e , .
+Row 3: j q b f l u p y x '
 
 Best Local Swap:
 Experiment: Geometric_Slow
-Final Fitness: 868,173.38
-Improvement: 63.49%
+Final Fitness: 866,852.96
+Improvement: 61.45%
 
 Best Local Layout
-Row 1: j q k , g c p v z x
-Row 2: u d o e i n s r m b
-Row 3: ; y f t a h l w . '
+Row 1: j x k . p m c y q z
+Row 2: f b u e a r o s l v
+Row 3: ' g , t i h n d w ;
 
 Overall Best (Random Swap):
-Experiment: Geometric_UltraSlow
-Final Fitness: 773,196.27
-Improvement: 63.64%
+Experiment: Linear_Aggressive
+Final Fitness: 762,870.52
+Improvement: 70.53%
 
 Overall Best Layout
-Row 1: x ; w c i h t p k z
-Row 2: . , o a e n s r m v
-Row 3: ' j y g u d l f b q
+Row 1: z w c d n i h g k ;
+Row 2: v m r s t o a e , .
+Row 3: j q b f l u p y x '

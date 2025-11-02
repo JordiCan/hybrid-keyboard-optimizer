@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #2
+================================================================================
+
+Experiment name: Linear_Aggressive
+Neighbor method: random
+Initial layout name: GA_Exp3
+Initial layout (as name): GA_Exp3
+
+Scheduler config:
+- schedule_type: linear
+- T_initial: 10000
+- k: 0.2
+
+Performance:
+- Initial fitness: 123,341.22
+- Final fitness: 120,763.67
+- Improvement: 2.09%
+- Time (s): 14.73
+
+Final layout:
+
+Final Layout
+Row 1: z b p m d , y g j '
+Row 2: v f l r n e a o u .
+Row 3: x k w s h i t c ; q
+

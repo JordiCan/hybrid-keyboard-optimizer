@@ -2,13 +2,13 @@ TOP RUNS SUMMARY
 ================================================================================
 Saved top 10 runs
 
-1. Experiment: Geometric_Fast, Method: random, Initial Layout: GA_Exp2, Final Fitness: 765,886.53, Time: 22.43s
-2. Experiment: Geometric_Balanced, Method: random, Initial Layout: GA_Exp2, Final Fitness: 767,577.42, Time: 21.25s
-3. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 768,816.06, Time: 22.76s
-4. Experiment: Geometric_Slow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 21.91s
-5. Experiment: Logarithmic_Fast, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 23.25s
-6. Experiment: Logarithmic_Slow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 23.43s
-7. Experiment: Linear_Aggressive, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 23.40s
-8. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 22.27s
-9. Experiment: Geometric_Fast, Method: local, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 23.29s
-10. Experiment: Geometric_Balanced, Method: local, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 23.33s
+1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 762,870.52, Time: 28.18s
+2. Experiment: Geometric_Balanced, Method: random, Initial Layout: GA_Exp2, Final Fitness: 767,943.57, Time: 26.58s
+3. Experiment: Geometric_Fast, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.19s
+4. Experiment: Geometric_Slow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.49s
+5. Experiment: Logarithmic_Fast, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.78s
+6. Experiment: Logarithmic_Slow, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.11s
+7. Experiment: Linear_Aggressive, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.50s
+8. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.09s
+9. Experiment: Geometric_Fast, Method: local, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 27.40s
+10. Experiment: Geometric_Balanced, Method: local, Initial Layout: GA_Exp2, Final Fitness: 769,434.63, Time: 26.68s

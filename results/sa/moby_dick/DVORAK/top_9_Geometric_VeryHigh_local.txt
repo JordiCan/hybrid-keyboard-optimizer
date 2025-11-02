@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #9
+================================================================================
+
+Experiment name: Geometric_VeryHigh
+Neighbor method: local
+Initial layout name: DVORAK
+Initial layout (as name): DVORAK
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 20000
+- k: 0.9997
+
+Performance:
+- Initial fitness: 1,433,882.88
+- Final fitness: 847,940.98
+- Improvement: 40.86%
+- Time (s): 21.54
+
+Final layout:
+
+Final Layout
+Row 1: q , b w i h t c k j
+Row 2: y u o e a r s n d l
+Row 3: ' x f g . m p v ; z
+

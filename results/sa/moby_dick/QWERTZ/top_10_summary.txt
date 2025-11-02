@@ -2,13 +2,13 @@ TOP RUNS SUMMARY
 ================================================================================
 Saved top 10 runs
 
-1. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: QWERTZ, Final Fitness: 768,816.06, Time: 24.40s
-2. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: QWERTZ, Final Fitness: 768,943.36, Time: 23.58s
-3. Experiment: Geometric_Balanced, Method: random, Initial Layout: QWERTZ, Final Fitness: 770,212.37, Time: 23.72s
-4. Experiment: Linear_Aggressive, Method: random, Initial Layout: QWERTZ, Final Fitness: 776,216.47, Time: 22.63s
-5. Experiment: Logarithmic_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 779,904.58, Time: 25.60s
-6. Experiment: Geometric_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 784,138.00, Time: 24.81s
-7. Experiment: Logarithmic_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 798,875.61, Time: 23.62s
-8. Experiment: Geometric_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 812,197.56, Time: 24.53s
-9. Experiment: Linear_Aggressive, Method: local, Initial Layout: QWERTZ, Final Fitness: 888,274.16, Time: 21.79s
-10. Experiment: Geometric_Slow, Method: local, Initial Layout: QWERTZ, Final Fitness: 893,442.11, Time: 20.67s
+1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: QWERTZ, Final Fitness: 767,943.57, Time: 22.79s
+2. Experiment: Linear_Aggressive, Method: random, Initial Layout: QWERTZ, Final Fitness: 769,305.52, Time: 22.64s
+3. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: QWERTZ, Final Fitness: 771,213.75, Time: 22.95s
+4. Experiment: Geometric_Balanced, Method: random, Initial Layout: QWERTZ, Final Fitness: 773,082.72, Time: 22.71s
+5. Experiment: Geometric_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 773,092.32, Time: 22.91s
+6. Experiment: Logarithmic_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 804,808.44, Time: 22.63s
+7. Experiment: Logarithmic_Slow, Method: random, Initial Layout: QWERTZ, Final Fitness: 804,838.15, Time: 23.26s
+8. Experiment: Linear_Aggressive, Method: local, Initial Layout: QWERTZ, Final Fitness: 806,569.66, Time: 50.93s
+9. Experiment: Geometric_Fast, Method: random, Initial Layout: QWERTZ, Final Fitness: 808,767.98, Time: 22.31s
+10. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: QWERTZ, Final Fitness: 885,342.29, Time: 30.54s

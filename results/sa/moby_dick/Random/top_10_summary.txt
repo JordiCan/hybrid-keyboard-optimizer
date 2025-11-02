@@ -2,13 +2,13 @@ TOP RUNS SUMMARY
 ================================================================================
 Saved top 10 runs
 
-1. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: Random, Final Fitness: 773,196.27, Time: 23.58s
-2. Experiment: Linear_Aggressive, Method: random, Initial Layout: Random, Final Fitness: 774,634.31, Time: 25.60s
-3. Experiment: Geometric_Balanced, Method: random, Initial Layout: Random, Final Fitness: 775,841.56, Time: 23.24s
-4. Experiment: Geometric_Slow, Method: random, Initial Layout: Random, Final Fitness: 779,656.12, Time: 23.18s
-5. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: Random, Final Fitness: 782,608.20, Time: 25.69s
-6. Experiment: Logarithmic_Fast, Method: random, Initial Layout: Random, Final Fitness: 804,235.87, Time: 22.86s
-7. Experiment: Logarithmic_Slow, Method: random, Initial Layout: Random, Final Fitness: 816,281.49, Time: 22.84s
-8. Experiment: Geometric_Fast, Method: random, Initial Layout: Random, Final Fitness: 838,124.43, Time: 22.67s
-9. Experiment: Geometric_Slow, Method: local, Initial Layout: Random, Final Fitness: 868,173.38, Time: 23.08s
-10. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: Random, Final Fitness: 877,980.99, Time: 23.60s
+1. Experiment: Linear_Aggressive, Method: random, Initial Layout: Random, Final Fitness: 762,870.52, Time: 23.33s
+2. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: Random, Final Fitness: 769,186.46, Time: 23.39s
+3. Experiment: Geometric_Slow, Method: random, Initial Layout: Random, Final Fitness: 774,634.31, Time: 34.16s
+4. Experiment: Geometric_Balanced, Method: random, Initial Layout: Random, Final Fitness: 778,895.15, Time: 38.22s
+5. Experiment: Logarithmic_Slow, Method: random, Initial Layout: Random, Final Fitness: 781,127.61, Time: 26.23s
+6. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: Random, Final Fitness: 788,541.54, Time: 23.56s
+7. Experiment: Logarithmic_Fast, Method: random, Initial Layout: Random, Final Fitness: 793,208.34, Time: 22.71s
+8. Experiment: Geometric_Fast, Method: random, Initial Layout: Random, Final Fitness: 840,199.44, Time: 31.39s
+9. Experiment: Geometric_Slow, Method: local, Initial Layout: Random, Final Fitness: 866,852.96, Time: 22.35s
+10. Experiment: Linear_Aggressive, Method: local, Initial Layout: Random, Final Fitness: 908,678.70, Time: 21.55s

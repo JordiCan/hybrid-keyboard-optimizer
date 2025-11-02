@@ -14,14 +14,14 @@ Scheduler config:
 
 Performance:
 - Initial fitness: 1,821,199.75
-- Final fitness: 808,099.19
-- Improvement: 55.63%
-- Time (s): 24.50
+- Final fitness: 795,531.01
+- Improvement: 56.32%
+- Time (s): 27.50
 
 Final layout:
 
 Final Layout
-Row 1: z w h d n i g f . ;
-Row 2: v l t s r a e o y ,
-Row 3: j q b c m u p k x '
+Row 1: q f p s h o t u w ;
+Row 2: v m l r n e a i g .
+Row 3: z x k b d , c y j '
 

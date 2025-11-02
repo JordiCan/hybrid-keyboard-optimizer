@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #4
+================================================================================
+
+Experiment name: Geometric_Slow
+Neighbor method: random
+Initial layout name: DVORAK
+Initial layout (as name): DVORAK
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 15000
+- k: 0.99985
+
+Performance:
+- Initial fitness: 1,433,882.88
+- Final fitness: 769,590.33
+- Improvement: 46.33%
+- Time (s): 23.11
+
+Final layout:
+
+Final Layout
+Row 1: ; , g h i t n d w z
+Row 2: . k e a o s r l c v
+Row 3: ' x y p u m f b q j
+

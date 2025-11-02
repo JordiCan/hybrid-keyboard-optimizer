@@ -1,8 +1,6 @@
-# keyboard_fitness_multi.py
 import numpy as np
 from collections import defaultdict
 
-# ============ FINGER & DISTANCE FUNCTIONS ============
 def get_finger_assigned(position):
     """Returns finger assignment for key position"""
     row = position // 10
@@ -69,7 +67,6 @@ def precompute_cost_matrices():
 
 DISTANCE_MATRIX, PENALTY_MATRIX = precompute_cost_matrices()
 
-# ============ TEXT & BIGRAM FUNCTIONS ============
 def load_text(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         return f.read().lower()
@@ -80,7 +77,6 @@ def precompute_bigrams(text):
         bigrams[(text[i], text[i+1])] += 1
     return dict(bigrams)
 
-# ============ FITNESS FUNCTION ============
 def fitness_function(keyboard_layout, bigram_freq):
     pos_map = {char: idx for idx, char in enumerate(keyboard_layout)}
     total_cost = 0
@@ -102,17 +98,14 @@ def fitness_function(keyboard_layout, bigram_freq):
     
     return total_cost
 
-# ============ MULTIPLE LAYOUTS EVALUATION ============
 def evaluate_layouts(layouts, bigram_freq):
     results = {}
     for name, layout in layouts.items():
         results[name] = fitness_function(layout, bigram_freq)
     
-    # Find the best layout (lowest fitness cost)
     best_layout = min(results, key=results.get)
     return results, best_layout
 
-# ============ EXAMPLE USAGE ============
 if __name__ == "__main__":
     layouts = {
         "Moby dick" : [

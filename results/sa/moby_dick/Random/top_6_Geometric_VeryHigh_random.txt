@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #6
+================================================================================
+
+Experiment name: Geometric_VeryHigh
+Neighbor method: random
+Initial layout name: Random
+Initial layout spec: Random
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 20000
+- k: 0.9997
+
+Performance:
+- Initial fitness: 2,177,095.02
+- Final fitness: 788,541.54
+- Improvement: 63.78%
+- Time (s): 23.56
+
+Final layout:
+
+Final Layout
+Row 1: z j v c d g k . x '
+Row 2: w h t s n i e a , ;
+Row 3: f b m r l o u p y q
+

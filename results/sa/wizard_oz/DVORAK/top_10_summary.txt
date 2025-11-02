@@ -2,13 +2,13 @@ TOP RUNS SUMMARY
 ================================================================================
 Saved top 10 runs
 
-1. Experiment: Geometric_Balanced, Method: random, Initial Layout: DVORAK, Final Fitness: 120,633.65, Time: 15.36s
-2. Experiment: Linear_Aggressive, Method: random, Initial Layout: DVORAK, Final Fitness: 120,813.30, Time: 15.39s
-3. Experiment: Geometric_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 121,733.02, Time: 15.38s
-4. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: DVORAK, Final Fitness: 124,399.93, Time: 15.24s
-5. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: DVORAK, Final Fitness: 127,352.81, Time: 15.31s
-6. Experiment: Logarithmic_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 127,916.06, Time: 15.51s
-7. Experiment: Geometric_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 128,862.13, Time: 14.96s
-8. Experiment: Logarithmic_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 129,001.22, Time: 15.17s
-9. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: DVORAK, Final Fitness: 129,973.63, Time: 14.25s
-10. Experiment: Geometric_Fast, Method: local, Initial Layout: DVORAK, Final Fitness: 137,262.29, Time: 14.25s
+1. Experiment: Geometric_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 122,904.90, Time: 14.85s
+2. Experiment: Linear_Aggressive, Method: random, Initial Layout: DVORAK, Final Fitness: 123,105.19, Time: 14.80s
+3. Experiment: Geometric_VeryHigh, Method: random, Initial Layout: DVORAK, Final Fitness: 123,141.82, Time: 14.78s
+4. Experiment: Logarithmic_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 125,147.57, Time: 14.88s
+5. Experiment: Geometric_UltraSlow, Method: random, Initial Layout: DVORAK, Final Fitness: 127,781.92, Time: 14.85s
+6. Experiment: Geometric_Balanced, Method: random, Initial Layout: DVORAK, Final Fitness: 128,868.57, Time: 14.79s
+7. Experiment: Geometric_Fast, Method: random, Initial Layout: DVORAK, Final Fitness: 129,580.71, Time: 14.50s
+8. Experiment: Geometric_UltraSlow, Method: local, Initial Layout: DVORAK, Final Fitness: 129,948.08, Time: 13.74s
+9. Experiment: Logarithmic_Slow, Method: random, Initial Layout: DVORAK, Final Fitness: 133,504.43, Time: 14.53s
+10. Experiment: Geometric_Slow, Method: local, Initial Layout: DVORAK, Final Fitness: 140,585.86, Time: 13.72s

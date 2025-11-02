@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #10
+================================================================================
+
+Experiment name: Geometric_Slow
+Neighbor method: local
+Initial layout name: COLEMAK
+Initial layout (as name): COLEMAK
+
+Scheduler config:
+- schedule_type: geometric
+- T_initial: 15000
+- k: 0.99985
+
+Performance:
+- Initial fitness: 222,474.49
+- Final fitness: 136,790.90
+- Improvement: 38.51%
+- Time (s): 14.19
+
+Final layout:
+
+Final Layout
+Row 1: z v p l g , d . j x
+Row 2: f m r e n o i a c k
+Row 3: ; b w s t u h y q '
+

@@ -16,7 +16,7 @@ Performance:
 - Initial fitness: 123,341.22
 - Final fitness: 123,341.22
 - Improvement: 0.00%
-- Time (s): 17.44
+- Time (s): 13.95
 
 Final layout:
 

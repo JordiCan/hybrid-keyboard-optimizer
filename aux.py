@@ -20,14 +20,12 @@ for text in texts:
     for img_name in images:
         img_path = os.path.join(input_path, img_name)
         if os.path.exists(img_path):
-            # Nombre del PDF con prefijo del texto
             pdf_name = f"{text}_{img_name.replace('.png', '.pdf')}"
             pdf_path = os.path.join(output_dir, pdf_name)
             
             img = ImageReader(img_path)
             iw, ih = img.getSize()
             
-            # Crear PDF con tamaño de la imagen
             c = canvas.Canvas(pdf_path, pagesize=(iw, ih))
             c.drawImage(img, 0, 0, width=iw, height=ih)
             c.showPage()

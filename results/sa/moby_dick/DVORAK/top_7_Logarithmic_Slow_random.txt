@@ -1,0 +1,27 @@
+================================================================================
+TOP RUN #7
+================================================================================
+
+Experiment name: Logarithmic_Slow
+Neighbor method: random
+Initial layout name: DVORAK
+Initial layout (as name): DVORAK
+
+Scheduler config:
+- schedule_type: logarithmic
+- T_initial: 10000
+- k: 2e-05
+
+Performance:
+- Initial fitness: 1,433,882.88
+- Final fitness: 804,108.24
+- Improvement: 43.92%
+- Time (s): 23.27
+
+Final layout:
+
+Final Layout
+Row 1: ; g d i u n s l p q
+Row 2: . , e a o h t r m v
+Row 3: ' x k w y c f b j z
+
