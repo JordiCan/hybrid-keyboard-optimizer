@@ -48,8 +48,12 @@ The optimization process analyzes millions of potential configurations, evaluati
 
 ## 🚀 Getting Started
 
-Open the code to dive into the optimization process:
 
+Open the Jupyter notebooks to dive into the optimization process:
+
+```bash
+jupyter simulated_annealing.ipynb genetic_algorithm.ipynb
+```
 
 Explore:
 - **Algorithm Implementation**: See how GA and SA work together
