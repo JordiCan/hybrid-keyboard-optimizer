@@ -1,0 +1,807 @@
+
+Processing dataset: moby_dick
+
+Processing initial layout: Random
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 840,199.4
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 778,895.1
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 774,634.3
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 793,208.3
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 781,127.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 762,870.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 788,541.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 769,186.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 1,177,847.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 939,344.4
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 866,853.0
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 1,180,407.1
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 1,120,702.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 908,678.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 1,004,334.4
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 921,793.0
+Results saved to: results/sa/moby_dick/Random/results.txt
+Top 10 runs saved to: results/sa/moby_dick/Random/top_10_summary.txt
+
+Processing initial layout: QWERTY
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 762,870.5
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 768,816.1
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 762,870.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 795,531.0
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 801,389.8
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 768,965.0
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,701.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 765,886.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 982,261.9
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 1,022,454.3
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 892,127.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 1,027,216.5
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 1,092,750.0
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 842,268.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 964,721.9
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 960,445.5
+Results saved to: results/sa/moby_dick/QWERTY/results.txt
+Top 10 runs saved to: results/sa/moby_dick/QWERTY/top_10_summary.txt
+
+Processing initial layout: DVORAK
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 783,881.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 786,257.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,590.3
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 865,274.2
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 804,108.2
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 767,943.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 767,943.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 762,870.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 982,945.9
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 957,074.4
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 826,952.4
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 1,039,898.4
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 985,479.8
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 863,946.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 847,941.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 858,963.1
+Results saved to: results/sa/moby_dick/DVORAK/results.txt
+Top 10 runs saved to: results/sa/moby_dick/DVORAK/top_10_summary.txt
+
+Processing initial layout: QWERTZ
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 808,768.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 773,082.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 773,092.3
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 804,808.4
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 804,838.1
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,305.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 771,213.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 767,943.6
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 1,069,508.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 963,812.3
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 951,459.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 1,067,299.8
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 1,097,011.9
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 806,569.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 943,320.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 885,342.3
+Results saved to: results/sa/moby_dick/QWERTZ/results.txt
+Top 10 runs saved to: results/sa/moby_dick/QWERTZ/top_10_summary.txt
+
+Processing initial layout: COLEMAK
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 775,437.3
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 776,216.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 768,816.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 857,059.7
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 814,472.8
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 772,152.9
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 784,633.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 781,872.6
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 1,131,607.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 1,021,438.0
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 954,050.4
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 1,115,001.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 1,132,200.1
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 965,603.8
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 972,578.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 976,036.1
+Results saved to: results/sa/moby_dick/COLEMAK/results.txt
+Top 10 runs saved to: results/sa/moby_dick/COLEMAK/top_10_summary.txt
+
+Processing initial layout: GA_Exp1
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 767,181.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 768,816.1
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 768,965.0
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 768,816.1
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 769,305.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 769,434.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,434.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,434.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 769,434.6
+Results saved to: results/sa/moby_dick/GA_Exp1/results.txt
+Top 10 runs saved to: results/sa/moby_dick/GA_Exp1/top_10_summary.txt
+
+Processing initial layout: GA_Exp2
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 767,943.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,434.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,434.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 762,870.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 769,434.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,434.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,434.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 769,434.6
+Results saved to: results/sa/moby_dick/GA_Exp2/results.txt
+Top 10 runs saved to: results/sa/moby_dick/GA_Exp2/top_10_summary.txt
+
+Processing initial layout: GA_Exp3
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 768,816.1
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,434.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,434.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 768,816.1
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 769,434.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 769,434.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 769,434.6
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 769,434.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 769,434.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 769,434.6
+Results saved to: results/sa/moby_dick/GA_Exp3/results.txt
+Top 10 runs saved to: results/sa/moby_dick/GA_Exp3/top_10_summary.txt
+
+Processing initial layout: GA_Exp4
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 765,886.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 765,886.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 765,886.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 762,870.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 765,886.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 765,886.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 765,886.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 765,886.5
+Results saved to: results/sa/moby_dick/GA_Exp4/results.txt
+Top 10 runs saved to: results/sa/moby_dick/GA_Exp4/top_10_summary.txt
+
+Processing initial layout: GA_Best
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 765,886.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 765,886.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 765,886.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 765,886.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 765,886.5
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 765,886.5
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 765,886.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 765,886.5
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 765,886.5
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 765,886.5
+Results saved to: results/sa/moby_dick/GA_Best/results.txt
+Top 10 runs saved to: results/sa/moby_dick/GA_Best/top_10_summary.txt
+
+Processing dataset: wizard_oz
+
+Processing initial layout: Random
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 122,518.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 126,290.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,638.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 132,637.8
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 138,620.1
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 122,579.6
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 123,105.2
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 127,466.7
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 141,960.8
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 139,004.2
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 132,958.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 180,297.4
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 184,491.0
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 135,289.3
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 139,909.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 135,772.2
+Results saved to: results/sa/wizard_oz/Random/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/Random/top_10_summary.txt
+
+Processing initial layout: QWERTY
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 126,285.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 124,537.8
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,638.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 125,865.8
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 126,308.1
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 126,527.9
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 127,140.6
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 129,703.9
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 135,902.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 137,078.8
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 135,425.8
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 162,015.3
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 166,743.0
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 134,013.8
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 137,025.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 134,920.0
+Results saved to: results/sa/wizard_oz/QWERTY/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/QWERTY/top_10_summary.txt
+
+Processing initial layout: DVORAK
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 129,580.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 128,868.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 122,904.9
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 125,147.6
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 133,504.4
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 123,105.2
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 123,141.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 127,781.9
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 144,182.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 142,232.4
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 140,585.9
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 162,665.8
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 160,814.1
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 141,939.8
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 140,605.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 129,948.1
+Results saved to: results/sa/wizard_oz/DVORAK/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/DVORAK/top_10_summary.txt
+
+Processing initial layout: QWERTZ
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 121,733.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 122,153.3
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,638.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 130,413.2
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 136,551.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 123,991.2
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 126,627.2
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 128,946.0
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 151,625.3
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 136,540.0
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 129,159.3
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 183,533.4
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 175,273.8
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 135,776.9
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 139,678.1
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 134,893.5
+Results saved to: results/sa/wizard_oz/QWERTZ/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/QWERTZ/top_10_summary.txt
+
+Processing initial layout: COLEMAK
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 126,010.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 124,865.6
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 129,126.8
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 127,624.5
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 126,789.2
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 123,141.8
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 128,547.5
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 145,771.3
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 146,599.2
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 136,790.9
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 178,111.4
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 179,430.3
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 138,584.2
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 137,026.4
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 131,693.6
+Results saved to: results/sa/wizard_oz/COLEMAK/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/COLEMAK/top_10_summary.txt
+
+Processing initial layout: GA_Exp1
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 120,638.1
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 120,638.1
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,638.1
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 121,733.0
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 121,733.0
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 121,733.0
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 121,733.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 121,733.0
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 121,733.0
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 121,733.0
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 121,733.0
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 121,733.0
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 121,733.0
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 121,733.0
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 121,733.0
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 121,733.0
+Results saved to: results/sa/wizard_oz/GA_Exp1/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/GA_Exp1/top_10_summary.txt
+
+Processing initial layout: GA_Exp2
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 122,030.3
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 122,030.3
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 121,975.4
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 122,030.3
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 122,030.3
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,763.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 122,030.3
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 122,030.3
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 122,030.3
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 122,030.3
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 122,030.3
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 122,030.3
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 122,030.3
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 122,030.3
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 122,030.3
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 122,030.3
+Results saved to: results/sa/wizard_oz/GA_Exp2/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/GA_Exp2/top_10_summary.txt
+
+Processing initial layout: GA_Exp3
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 123,341.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 123,141.8
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 123,341.2
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 123,341.2
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,763.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 123,341.2
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 123,341.2
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 123,341.2
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 123,341.2
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 123,341.2
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 123,341.2
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 123,341.2
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 123,341.2
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 123,341.2
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 123,341.2
+Results saved to: results/sa/wizard_oz/GA_Exp3/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/GA_Exp3/top_10_summary.txt
+
+Processing initial layout: GA_Exp4
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 120,633.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,633.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 120,633.7
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 120,633.7
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 120,633.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,633.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 120,633.7
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 120,633.7
+Results saved to: results/sa/wizard_oz/GA_Exp4/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/GA_Exp4/top_10_summary.txt
+
+Processing initial layout: GA_Best
+
+Neighbor method: random
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 120,633.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,633.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 120,633.7
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 120,633.7
+
+Neighbor method: local
+Running experiment 1/8: Geometric_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 2/8: Geometric_Balanced
+Completed: Final fitness = 120,633.7
+Running experiment 3/8: Geometric_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 4/8: Logarithmic_Fast
+Completed: Final fitness = 120,633.7
+Running experiment 5/8: Logarithmic_Slow
+Completed: Final fitness = 120,633.7
+Running experiment 6/8: Linear_Aggressive
+Completed: Final fitness = 120,633.7
+Running experiment 7/8: Geometric_VeryHigh
+Completed: Final fitness = 120,633.7
+Running experiment 8/8: Geometric_UltraSlow
+Completed: Final fitness = 120,633.7
+Results saved to: results/sa/wizard_oz/GA_Best/results.txt
+Top 10 runs saved to: results/sa/wizard_oz/GA_Best/top_10_summary.txt
+
+All experiments completed!
+Results saved to: /root/hybrid-keyboard-optimizer/results/sa
