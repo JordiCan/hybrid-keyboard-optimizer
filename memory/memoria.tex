@@ -527,8 +527,203 @@ This suggests that the optimization process for this corpus works better with a 
 While Moby Dick requires less exploration and a more focused search strategy, the Wizard of Oz corpus thrives on a broader exploration of the solution space.
 But in general parameters and experiments for the AG, shows the explorative nature of the optimization process.
 
-\section{Simulated Annealing} \label{chpt:5}
+\chapter{Simulated Annealing: Methodology and Experiments} \label{chpt:4}
 
+\section{Simulated Annealing Algorithm}
+
+Simulated Annealing (SA) is a probabilistic optimization technique inspired by the annealing process in metallurgy, where materials are heated and then slowly cooled to reduce defects and reach a low-energy crystalline state. The algorithm explores the solution space by accepting both improving and worsening moves, with the probability of accepting worse solutions decreasing over time according to a temperature schedule.
+
+\subsection{Algorithm Components}
+
+\subsubsection{Initial Solution}
+The algorithm can start from different initial configurations:
+\begin{itemize}
+    \item \textbf{Random layout:} A random permutation of the 30 characters
+    \item \textbf{Known layouts:} QWERTY, Dvorak, QWERTZ, or Colemak as starting points
+    \item \textbf{GA-optimized layouts:} Best solutions from genetic algorithm experiments (Exp1-4 and overall best from each corpus)
+\end{itemize}
+
+\subsubsection{Neighbor Generation}
+Two neighborhood strategies are implemented:
+
+\textbf{Random Swap:} Selects two random positions $i, j \in [0, 29]$ uniformly and swaps their characters. This provides global exploration capability, allowing the algorithm to make large jumps in the solution space.
+
+\textbf{Local Swap:} Selects a random position $i$ and swaps it with one of its adjacent neighbors (left, right, top, or bottom in the 3×10 grid). This provides local refinement capability, making smaller, more conservative moves that preserve the overall structure.
+
+\subsubsection{Temperature Schedule}
+The temperature $T$ controls the probability of accepting worse solutions. Three cooling schedules are implemented:
+
+\textbf{Geometric (Exponential) Cooling:}
+\begin{equation}
+    T(t) = T_0 \cdot k^t
+\end{equation}
+where $T_0$ is the initial temperature, $k \in (0, 1)$ is the cooling factor, and $t$ is the iteration number. This is the most commonly used schedule, providing exponential decay.
+
+\textbf{Logarithmic Cooling:}
+\begin{equation}
+    T(t) = \frac{T_0}{1 + k \cdot T_0 \cdot t}
+\end{equation}
+This schedule cools more slowly initially and provides theoretical guarantees of convergence to the global optimum under certain conditions.
+
+\textbf{Linear Cooling:}
+\begin{equation}
+    T(t) = \max(T_0 - k \cdot t, 0.01)
+\end{equation}
+This schedule provides uniform temperature decrease, with a minimum threshold to prevent division by zero.
+
+\subsubsection{Acceptance Criterion}
+The algorithm uses the Metropolis acceptance criterion. For a candidate solution $S'$ with fitness $f(S')$ and current solution $S$ with fitness $f(S)$:
+
+\begin{equation}
+P(\text{accept}) = \begin{cases}
+    1 & \text{if } \Delta f = f(S) - f(S') > 0 \text{ (improvement)} \\
+    e^{\Delta f / T} & \text{if } \Delta f \leq 0 \text{ (worsening)}
+\end{cases}
+\end{equation}
+
+Better solutions are always accepted, while worse solutions are accepted with probability that decreases as temperature decreases and as the fitness degradation increases.
+
+\subsection{Algorithm Pseudocode}
+
+\begin{verbatim}
+Algorithm: Simulated Annealing for Keyboard Optimization
+Input: text_file, initial_layout, T_initial, max_iterations, 
+       schedule_type, k, neighbor_method
+Output: best_layout, history
+
+1. Load and preprocess text, compute bigram frequencies
+2. Initialize current solution S ← initial_layout
+3. Initialize best solution S_best ← S
+4. Compute f(S) ← fitness(S, bigrams)
+5. Set f_best ← f(S)
+
+6. FOR t = 0 TO max_iterations DO
+7.     T ← temperature_schedule(T_initial, t, schedule_type, k)
+8.     S' ← get_neighbor(S, neighbor_method)
+9.     f(S') ← fitness(S', bigrams)
+10.    \vartriangle f ← f(S) - f(S')
+11.    
+12.    IF \vartriangle f > 0 THEN  // Improvement
+13.        S ← S'
+14.        f(S) ← f(S')
+16.        IF f(S') < f_best THEN
+17.            S_best ← S'
+18.            f_best ← f(S')
+19.    ELSE  // Worsening or equal
+20.        IF T > 0 THEN
+21.            p ← exp(\vartriangle f / T)
+22.            IF random(0,1) < p THEN
+23.                S ← S'
+24.                f(S) ← f(S')
+25.    
+26.    Record iteration data (every 100 iterations)
+27. END FOR
+
+28. RETURN S_best, history
+\end{verbatim}
+
+\subsection{Fitness Function}
+The SA algorithm uses the same fitness function defined in Section \ref{sec:fitness_function}, ensuring direct comparability with genetic algorithm results. The objective remains to minimize the total typing cost across all bigrams in the text.
+
+\section{Experimental Design} \label{sec:sa_experimental_design}
+
+To comprehensively evaluate the simulated annealing algorithm, a systematic experimental design was implemented that explores three key dimensions: initial layout selection, temperature scheduling, and neighborhood strategy.
+
+\subsection{Experimental Dimensions}
+
+\subsubsection{Initial Layouts}
+Ten different initial layouts were tested for each corpus:
+
+\textbf{Traditional Layouts (4):}
+\begin{itemize}
+    \item QWERTY: Most common layout
+    \item Dvorak: Scientifically designed ergonomic layout
+    \item QWERTZ: German variant of QWERTY
+    \item Colemak: Modern efficiency-focused layout
+\end{itemize}
+
+\textbf{Random Layout (1):}
+\begin{itemize}
+    \item Random: Completely random permutation
+\end{itemize}
+
+\textbf{GA-Optimized Layouts (5):}
+\begin{itemize}
+    \item GA\_Exp1: Best layout from GA Experiment 1 (Population Size)
+    \item GA\_Exp2: Best layout from GA Experiment 2 (Tournament Selection)
+    \item GA\_Exp3: Best layout from GA Experiment 3 (Mutation Rate)
+    \item GA\_Exp4: Best layout from GA Experiment 4 (Elite Percentage)
+    \item GA\_Best: Overall best layout from GA experiments
+\end{itemize}
+
+\subsubsection{Temperature Schedules}
+Eight different temperature schedule configurations were tested:
+
+\begin{table}[H]
+    \centering
+    \caption{Temperature Schedule Configurations}
+    \label{tab:sa_schedules}
+    \begin{tabular}{@{}llrrr@{}}
+        \toprule
+        \textbf{Name} & \textbf{Type} & \textbf{$T_0$} & \textbf{$k$} & \textbf{Iterations} \\ 
+        \midrule
+        Geometric\_Fast & Geometric & 5,000 & 0.9995 & 50,000 \\
+        Geometric\_Balanced & Geometric & 10,000 & 0.9998 & 50,000 \\
+        Geometric\_Slow & Geometric & 15,000 & 0.99985 & 50,000 \\
+        Geometric\_VeryHigh & Geometric & 20,000 & 0.9997 & 50,000 \\
+        Geometric\_UltraSlow & Geometric & 10,000 & 0.99995 & 50,000 \\
+        Logarithmic\_Fast & Logarithmic & 5,000 & 0.00005 & 50,000 \\
+        Logarithmic\_Slow & Logarithmic & 10,000 & 0.00002 & 50,000 \\
+        Linear\_Aggressive & Linear & 10,000 & 0.2 & 50,000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsection{Neighborhood Strategies}
+Two neighborhood methods were tested:
+\begin{itemize}
+    \item \textbf{Random Swap:} Global exploration through unrestricted position swapping
+    \item \textbf{Local Swap:} Local refinement through adjacent position swapping
+\end{itemize}
+
+\subsection{Experimental Scope}
+
+The complete experimental matrix consists of:
+\begin{itemize}
+    \item 2 corpora (Moby Dick, Wizard of Oz)
+    \item 10 initial layouts per corpus
+    \item 8 temperature schedules
+    \item 2 neighborhood strategies
+    \item \textbf{Total: 320 individual SA runs}
+\end{itemize}
+
+Each run was seeded deterministically based on a hash of the configuration parameters to ensure reproducibility while maintaining independence across experiments.
+
+\subsection{Performance Metrics}
+
+For each SA run, the following metrics were recorded:
+\begin{itemize}
+    \item \textbf{Initial fitness:} Fitness of the starting layout
+    \item \textbf{Final fitness:} Fitness of the best solution found
+    \item \textbf{Improvement:} Absolute and percentage improvement
+    \item \textbf{Convergence history:} Best fitness tracked every 100 iterations
+    \item \textbf{Acceptance statistics:} Number of accepted vs. rejected moves
+    \item \textbf{Computational time:} Execution time in seconds
+\end{itemize}
+
+\subsection{Experimental Goals}
+
+The experimental design aims to answer several key questions:
+
+\begin{enumerate}
+    \item \textbf{Schedule Effectiveness:} Which temperature schedules provide the best balance between exploration and exploitation?
+    \item \textbf{Neighborhood Impact:} How do random vs. local neighborhood strategies affect solution quality and convergence speed?
+    \item \textbf{Initial Layout Influence:} Can SA effectively improve already-optimized GA layouts, or do poor initial solutions limit final performance?
+    \item \textbf{Corpus Sensitivity:} Do simpler texts (Wizard of Oz) and complex texts (Moby Dick) respond differently to SA configurations?
+    \item \textbf{GA vs. SA Comparison:} How do the best SA solutions compare to the best GA solutions?
+\end{enumerate}
+
+The following sections present detailed results addressing each of these questions.
 
 \chapter{Conclusions} \label{chpt:6}
 
