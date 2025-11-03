@@ -67,8 +67,8 @@ jupyter notebook
 ```
 
 Then explore:
-- `genetic_algorithm.ipynb` - Genetic Algorithm implementation
-- `simulated_annealing.ipynb` - Simulated Annealing approach
+- `cross_genetic_algorithm.ipynb` - Genetic Algorithm implementation
+- `cross_simulated_annealing.ipynb` - Simulated Annealing approach
 
 **What you'll find:**
 - **Algorithm Implementation**: See how GA and SA work together
