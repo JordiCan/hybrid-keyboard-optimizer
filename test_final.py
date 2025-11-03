@@ -121,7 +121,7 @@ if __name__ == "__main__":
     }
 
 
-    text_file = "data/guia_presentacion_cln.txt"
+    text_file = "data/presentation_guide_cln.txt"
     text = load_text(text_file)
     bigrams = precompute_bigrams(text)
 

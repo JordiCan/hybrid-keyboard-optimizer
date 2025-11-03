@@ -10,8 +10,8 @@ images = [
     "fitness_evolution_random.png",
     "fitness_evolution_local.png"
 ]
-base_input = "results/sa"
-output_dir = "slides/recursos"
+base_input = "../results/sa"
+output_dir = "../figures"
 os.makedirs(output_dir, exist_ok=True)
 
 for text in texts:

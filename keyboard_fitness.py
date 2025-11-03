@@ -110,12 +110,11 @@ def fitness_function(keyboard_layout, bigram_freq):
 
 # ============ EXAMPLE USAGE ============
 if __name__ == "__main__":
-    # Example layout (QWERTY)
     moby_dick=["'", ';', ',', 'd', 'y', 'l', 'b', 'w', 'x', 'z', '.', 'g', 'i', 'e', 'a', 'n', 't', 'h', 'm', 'v', 'j', 'k', 'p', 'u', 'o', 'r', 's', 'c', 'f', 'q']
     wizard_oz=['j', 'p', 'c', 't', 'u', 'h', 's', 'w', 'x', 'q', '.', 'y', 'e', 'a', 'i', 'r', 'o', 'l', 'm', 'b', ';', 'v', ',', 'g', 'f', 'n', 'd', 'k', 'z', "'"]
     
-    moby_text= "hybrid-keyboard-optimizer/data/moby_dick_cln.txt"
-    wizard_text= "hybrid-keyboard-optimizer/data/wonderful_wizard_oz_cln.txt"
+    moby_text= "data/moby_dick_cln.txt"
+    wizard_text= "data/wonderful_wizard_oz_cln.txt"
     moby_text= load_text(moby_text)
     wizard_text= load_text(wizard_text)
     bigrams_moby = precompute_bigrams(moby_text)
