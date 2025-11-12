@@ -5,7 +5,9 @@ from random import randint, shuffle
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
-# ============ PRECOMPUTE MATRICES (SOLO UNA VEZ) ============
+#Single experiment genetic algorithm for keyboard layout optimization
+
+# ============ PRECOMPUTE MATRICES ============
 def get_finger_assigned(position):
     """Returns finger assignment for key position"""
     row = position // 10
