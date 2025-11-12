@@ -365,4 +365,4 @@ DATOS PARA LATEX
 
 ============================================================
 
-Time consumed: 58.74s (00h00m58s)
+Time consumed: 66.99s (00h01m06s)
