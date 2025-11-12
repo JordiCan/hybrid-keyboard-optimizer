@@ -1,87 +1,87 @@
 # Hybrid Keyboard Optimizer
 
-Un sistema de optimización híbrido para el diseño de distribuciones de teclado que combina algoritmos genéticos y recocido simulado para minimizar la fatiga en la escritura y maximizar la eficiencia.
+A hybrid optimization system for keyboard layout design that combines genetic algorithms and simulated annealing to minimize typing fatigue and maximize efficiency.
 
-## Motivación
+## Motivation
 
-El diseño QWERTY data de 1870 y fue creado para evitar atascos mecánicos en las máquinas de escribir, no para optimizar la ergonomía humana. Este proyecto utiliza técnicas de optimización algorítmica para explorar distribuciones alternativas basadas en patrones de escritura modernos y análisis de frecuencia de caracteres.
+The QWERTY layout dates back to 1870 and was designed to prevent mechanical jams in typewriters, not to optimize human ergonomics. This project uses algorithmic optimization techniques to explore alternative layouts based on modern typing patterns and character frequency analysis.
 
-## Metodología
+## Methodology
 
-El sistema implementa dos algoritmos metaheurísticos:
+The system implements two metaheuristic algorithms:
 
-**Algoritmos Genéticos (GA)**
-Genera poblaciones de distribuciones de teclado, selecciona las más eficientes mediante una función de fitness, y produce nuevas generaciones a través de operadores de cruce y mutación.
+**Genetic Algorithms (GA)**
+Generates populations of keyboard layouts, selects the most efficient ones through a fitness function, and produces new generations via crossover and mutation operators.
 
-**Recocido Simulado (SA)**
-Refina las soluciones candidatas mediante un proceso de enfriamiento gradual que acepta temporalmente configuraciones subóptimas para escapar de mínimos locales.
+**Simulated Annealing (SA)**
+Refines candidate solutions through a gradual cooling process that temporarily accepts suboptimal configurations to escape local minima.
 
-**Enfoque Híbrido**
-La combinación de ambos métodos permite una exploración amplia del espacio de soluciones (GA) seguida de un refinamiento local (SA), resultando en mejores soluciones que las obtenidas por cada algoritmo individualmente.
+**Hybrid Approach**
+The combination of both methods enables broad exploration of the solution space (GA) followed by local refinement (SA), yielding better solutions than either algorithm achieves individually.
 
-## Función de Fitness
+## Fitness Function
 
-El sistema evalúa cada distribución según múltiples criterios:
+The system evaluates each layout according to multiple criteria:
 
-- **Distancia de desplazamiento**: Distancia total recorrida por los dedos
-- **Alternancia entre manos**: Frecuencia de cambio entre mano izquierda y derecha
-- **Penalización por mismo dedo**: Uso consecutivo del mismo dedo
-- **Uso de fila base**: Porcentaje de pulsaciones en la fila principal
-- **Optimización de bigramas**: Colocación eficiente de pares de letras frecuentes
-- **Balance entre manos**: Distribución equitativa de la carga de trabajo
+- **Finger travel distance**: Total distance traveled by fingers
+- **Hand alternation**: Frequency of switching between left and right hand
+- **Same-finger penalty**: Consecutive use of the same finger
+- **Home row usage**: Percentage of keystrokes on the main row
+- **Bigram optimization**: Efficient placement of frequent letter pairs
+- **Hand balance**: Equal workload distribution
 
-## Instalación
+## Installation
 
-Instalar las dependencias necesarias:
+Install required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Dependencias: numpy, matplotlib, jupyter
+Dependencies: numpy, matplotlib, jupyter
 
-## Uso
+## Usage
 
-Ejecutar los notebooks de Jupyter:
+Run the Jupyter notebooks:
 
 ```bash
 jupyter notebook
 ```
 
-Archivos disponibles:
-- `cross_genetic_algorithm.ipynb` - Implementación del algoritmo genético
-- `cross_simulated_annealing.ipynb` - Implementación del recocido simulado
+Available files:
+- `cross_genetic_algorithm.ipynb` - Genetic algorithm implementation
+- `cross_simulated_annealing.ipynb` - Simulated annealing implementation
 
-Los notebooks incluyen implementaciones completas, visualizaciones del proceso de optimización y comparaciones con distribuciones establecidas (QWERTY, Dvorak, Colemak).
+The notebooks include complete implementations, optimization process visualizations, and comparisons with established layouts (QWERTY, Dvorak, Colemak).
 
-## Visualizaciones
+## Visualizations
 
-El proyecto genera:
-- Mapas de calor de uso por dedo
-- Gráficas de convergencia del algoritmo
-- Comparativas de rendimiento
-- Métricas de distancia de desplazamiento
+The project generates:
+- Heatmaps of finger usage
+- Algorithm convergence plots
+- Performance comparisons
+- Finger travel distance metrics
 
-## Consideraciones
+## Considerations
 
-- La distribución óptima depende del idioma, tipo de contenido y preferencias individuales
-- Pequeñas mejoras en eficiencia pueden requerir cambios significativos en la distribución
-- La memoria muscular representa un obstáculo práctico para la adopción de nuevas distribuciones
-- Diferentes contextos de uso (programación vs. escritura en prosa) pueden beneficiarse de distribuciones distintas
+- The optimal layout depends on language, content type, and individual preferences
+- Small efficiency improvements may require significant layout changes
+- Muscle memory represents a practical obstacle for adopting new layouts
+- Different use contexts (programming vs. prose writing) may benefit from distinct layouts
 
-## Aplicación Académica
+## Academic Application
 
-Este proyecto resulta útil para:
-- Estudio de algoritmos de optimización metaheurística
-- Investigación en interacción humano-computadora
-- Análisis de diseño ergonómico
-- Aplicación práctica de técnicas de inteligencia computacional
+This project is useful for:
+- Study of metaheuristic optimization algorithms
+- Research in human-computer interaction
+- Ergonomic design analysis
+- Practical application of computational intelligence techniques
 
-## Contribuciones
+## Contributing
 
-Las contribuciones son bienvenidas. Áreas de interés:
-- Mejoras en la función de fitness
-- Nuevas estrategias de optimización
-- Soporte para múltiples idiomas
-- Validación experimental con usuarios reales
+Contributions are welcome. Areas of interest:
+- Fitness function improvements
+- New optimization strategies
+- Multi-language support
+- Experimental validation with real users
 
