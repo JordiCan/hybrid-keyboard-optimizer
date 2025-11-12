@@ -1,144 +1,87 @@
-# 🎹 Hybrid Keyboard Optimizer
+# Hybrid Keyboard Optimizer
 
-> *What if QWERTY isn't the best we can do?*
+Un sistema de optimización híbrido para el diseño de distribuciones de teclado que combina algoritmos genéticos y recocido simulado para minimizar la fatiga en la escritura y maximizar la eficiencia.
 
-A sophisticated hybrid optimization system that reimagines keyboard layout design by combining the exploratory power of **Genetic Algorithms** with the refinement capabilities of **Simulated Annealing**. This project doesn't just shuffle keys—it scientifically engineers layouts that minimize finger fatigue, maximize typing speed, and create a more natural typing experience.
+## Motivación
 
-## 🌟 Why This Matters
+El diseño QWERTY data de 1870 y fue creado para evitar atascos mecánicos en las máquinas de escribir, no para optimizar la ergonomía humana. Este proyecto utiliza técnicas de optimización algorítmica para explorar distribuciones alternativas basadas en patrones de escritura modernos y análisis de frecuencia de caracteres.
 
-The QWERTY layout was designed in the 1870s to prevent mechanical typewriter jams—not to optimize human typing. We've been stuck with this relic for over 150 years. While alternatives like Dvorak and Colemak exist, this project takes a data-driven, algorithmic approach to discover potentially superior layouts tailored to modern typing patterns.
+## Metodología
 
-## 🧬 The Hybrid Approach
+El sistema implementa dos algoritmos metaheurísticos:
 
-### Genetic Algorithms (GA)
-Like evolution in nature, our GA creates a population of keyboard layouts, selects the fittest individuals, and breeds new generations through crossover and mutation. This explores vast solution spaces efficiently.
+**Algoritmos Genéticos (GA)**
+Genera poblaciones de distribuciones de teclado, selecciona las más eficientes mediante una función de fitness, y produce nuevas generaciones a través de operadores de cruce y mutación.
 
-### Simulated Annealing (SA)
-Inspired by the metallurgical process of annealing, this algorithm carefully "cools down" solutions, accepting occasional worse configurations to escape local optima—like a ball rolling through valleys to find the deepest one.
+**Recocido Simulado (SA)**
+Refina las soluciones candidatas mediante un proceso de enfriamiento gradual que acepta temporalmente configuraciones subóptimas para escapar de mínimos locales.
 
-### The Hybrid Magic ✨
-By combining both techniques, we get:
-- **Exploration** from GA: Discovering diverse, promising layouts
-- **Exploitation** from SA: Fine-tuning those layouts to perfection
-- **Best of Both Worlds**: Superior results that neither algorithm achieves alone
+**Enfoque Híbrido**
+La combinación de ambos métodos permite una exploración amplia del espacio de soluciones (GA) seguida de un refinamiento local (SA), resultando en mejores soluciones que las obtenidas por cada algoritmo individualmente.
 
-## 🎯 What Makes a Great Layout?
+## Función de Fitness
 
-Our multi-objective fitness function considers:
+El sistema evalúa cada distribución según múltiples criterios:
 
-| Metric | Description | Impact |
-|--------|-------------|--------|
-| 🏃 **Finger Travel Distance** | Total distance your fingers move | Reduces fatigue and increases speed |
-| 🤝 **Hand Alternation** | Switching between left and right hands | Creates natural rhythm and flow |
-| 🚫 **Same-Finger Penalty** | Consecutive keys with the same finger | Eliminates awkward movements |
-| 🏠 **Home Row Dominance** | Frequency of home row usage | Minimizes hand movement |
-| 📊 **Bigram Optimization** | Placement of common letter pairs | Optimizes real-world typing patterns |
-| ⚖️ **Hand Balance** | Equal workload distribution | Prevents one-sided strain |
+- **Distancia de desplazamiento**: Distancia total recorrida por los dedos
+- **Alternancia entre manos**: Frecuencia de cambio entre mano izquierda y derecha
+- **Penalización por mismo dedo**: Uso consecutivo del mismo dedo
+- **Uso de fila base**: Porcentaje de pulsaciones en la fila principal
+- **Optimización de bigramas**: Colocación eficiente de pares de letras frecuentes
+- **Balance entre manos**: Distribución equitativa de la carga de trabajo
 
-## 🔬 Research & Methodology
+## Instalación
 
-This project represents the intersection of:
-- **Computational Intelligence**: Advanced metaheuristic algorithms
-- **Ergonomics**: Human-centered design principles
-- **Data Science**: Statistical analysis of typing patterns
-- **Biomechanics**: Understanding finger movement and hand anatomy
-
-The optimization process analyzes millions of potential configurations, evaluating each against real-world typing data to find layouts that feel intuitive and perform exceptionally.
-
-## 📦 Dependencies
-
-This project requires minimal dependencies. Install them using:
+Instalar las dependencias necesarias:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The `requirements.txt` includes:
-- **numpy**: For matrix operations and numerical computations
-- **matplotlib**: For visualizing optimization progress
-- **jupyter**: For running interactive notebooks
+Dependencias: numpy, matplotlib, jupyter
 
-## 🚀 Getting Started
+## Uso
 
-Open the Jupyter notebooks to dive into the optimization process:
+Ejecutar los notebooks de Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-Then explore:
-- `cross_genetic_algorithm.ipynb` - Genetic Algorithm implementation
-- `cross_simulated_annealing.ipynb` - Simulated Annealing approach
+Archivos disponibles:
+- `cross_genetic_algorithm.ipynb` - Implementación del algoritmo genético
+- `cross_simulated_annealing.ipynb` - Implementación del recocido simulado
 
-**What you'll find:**
-- **Algorithm Implementation**: See how GA and SA work together
-- **Visualization**: Watch layouts evolve in real-time
-- **Comparative Analysis**: Benchmark against QWERTY, Dvorak, and Colemak
-- **Custom Experiments**: Tweak parameters and create your own layouts
+Los notebooks incluyen implementaciones completas, visualizaciones del proceso de optimización y comparaciones con distribuciones establecidas (QWERTY, Dvorak, Colemak).
 
-## 💡 Key Insights
+## Visualizaciones
 
-1. **No Universal Solution**: The "best" layout depends on language, typing style, and personal preferences
-2. **Diminishing Returns**: Small improvements require exponentially more optimization
-3. **Muscle Memory Matters**: Even optimal layouts face the challenge of retraining
-4. **Context is King**: Different tasks (coding vs. prose) may benefit from different layouts
+El proyecto genera:
+- Mapas de calor de uso por dedo
+- Gráficas de convergencia del algoritmo
+- Comparativas de rendimiento
+- Métricas de distancia de desplazamiento
 
-## 🎨 Visualization Examples
+## Consideraciones
 
-The project includes rich visualizations:
-- Heatmaps showing finger usage patterns
-- Convergence plots tracking optimization progress
-- Comparative performance charts
-- Finger travel distance animations
+- La distribución óptima depende del idioma, tipo de contenido y preferencias individuales
+- Pequeñas mejoras en eficiencia pueden requerir cambios significativos en la distribución
+- La memoria muscular representa un obstáculo práctico para la adopción de nuevas distribuciones
+- Diferentes contextos de uso (programación vs. escritura en prosa) pueden beneficiarse de distribuciones distintas
 
-## 🧪 Experimental Features
+## Aplicación Académica
 
-- **Multi-language Optimization**: Adapt layouts for different languages
-- **Adaptive Layouts**: Consider programming symbols for developers
-- **Ergonomic Constraints**: Respect physical keyboard geometries
-- **User Profiling**: Personalize based on individual typing patterns
+Este proyecto resulta útil para:
+- Estudio de algoritmos de optimización metaheurística
+- Investigación en interacción humano-computadora
+- Análisis de diseño ergonómico
+- Aplicación práctica de técnicas de inteligencia computacional
 
-## 🤝 Contributing
+## Contribuciones
 
-Have ideas to improve the optimization algorithm? Found interesting patterns in your experiments? Contributions are welcome!
+Las contribuciones son bienvenidas. Áreas de interés:
+- Mejoras en la función de fitness
+- Nuevas estrategias de optimización
+- Soporte para múltiples idiomas
+- Validación experimental con usuarios reales
 
-- 🐛 Report bugs or unexpected behavior
-- 💡 Suggest new fitness metrics or optimization strategies
-- 🔬 Share your experimental results
-- 📚 Improve documentation or add examples
-
-## 📖 Learn More
-
-This project builds upon decades of research in:
-- Ergonomic keyboard design
-- Evolutionary computation
-- Optimization theory
-- Human-computer interaction
-
-Dive into the notebooks to understand the mathematical foundations and see the algorithms in action!
-
-## 🎓 Academic Context
-
-Perfect for:
-- Computer Science students studying optimization algorithms
-- Researchers in human-computer interaction
-- Ergonomics enthusiasts
-- Anyone curious about computational problem-solving
-
-## 🌐 The Bigger Picture
-
-This isn't just about keyboards—it's about:
-- Applying AI to improve everyday tools
-- Questioning long-standing design assumptions
-- Using data to drive better decisions
-- Making technology more human-friendly
-
----
-
-**"The best keyboard layout is the one that makes typing feel like thinking."**
-
-*A research project exploring the frontiers of keyboard optimization through hybrid metaheuristic algorithms.*
-
----
-
-⭐ **Star this repo** if you find it interesting! | 🔍 **Explore the code** to learn about optimization | 🚀 **Fork it** to run your own experiments
